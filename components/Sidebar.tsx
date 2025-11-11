@@ -16,8 +16,7 @@ import {
   CreditCard,
   FolderOpen,
   ShieldCheck,
-  Award,
-  Bell
+  Award
 } from 'lucide-react';
 import { useState } from 'react';
 import { authService } from '@/lib/auth';
@@ -42,7 +41,6 @@ const navigation: NavItem[] = [
   { name: 'Citas', href: '/dashboard/appointments', icon: Calendar },
   { name: 'Promociones', href: '/dashboard/promotions', icon: Tag },
   { name: 'Especialidades', href: '/dashboard/specialties', icon: Award },
-  { name: 'Notificaciones', href: '/dashboard/notifications', icon: Bell },
   { 
     name: 'General', 
     icon: FolderOpen,
