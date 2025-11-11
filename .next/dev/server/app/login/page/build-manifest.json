@@ -2,20 +2,20 @@
   "devFiles": [],
   "ampDevFiles": [],
   "polyfillFiles": [
-    "static/chunks/3b160_next_dist_build_polyfills_polyfill-nomodule.js"
+    "static/chunks/2d413_next_dist_build_polyfills_polyfill-nomodule.js"
   ],
   "lowPriorityFiles": [],
   "rootMainFiles": [
-    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_2bc6e938._.js",
-    "static/chunks/3b160_next_dist_compiled_react-dom_06d22497._.js",
-    "static/chunks/3b160_next_dist_compiled_react-server-dom-turbopack_c3c7abd9._.js",
-    "static/chunks/3b160_next_dist_compiled_next-devtools_index_e6b2cdbc.js",
-    "static/chunks/3b160_next_dist_compiled_3da452e8._.js",
-    "static/chunks/3b160_next_dist_client_71c3aee2._.js",
-    "static/chunks/3b160_next_dist_43df4387._.js",
-    "static/chunks/3b160_@swc_helpers_cjs_094f7243._.js",
-    "static/chunks/Desktop_projects_barber_app_backoffice_a0ff3932._.js",
-    "static/chunks/turbopack-Desktop_projects_barber_app_backoffice_5154c363._.js"
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_b2df0b3e._.js",
+    "static/chunks/2d413_next_dist_compiled_react-dom_eded381e._.js",
+    "static/chunks/2d413_next_dist_compiled_react-server-dom-turbopack_576cb1c5._.js",
+    "static/chunks/2d413_next_dist_compiled_next-devtools_index_6067706f.js",
+    "static/chunks/2d413_next_dist_compiled_47da15ba._.js",
+    "static/chunks/2d413_next_dist_client_86f3596f._.js",
+    "static/chunks/2d413_next_dist_1241895f._.js",
+    "static/chunks/2d413_@swc_helpers_cjs_abbac00c._.js",
+    "static/chunks/Desktop_projects_barber-application_barber-app-backoffice_a0ff3932._.js",
+    "static/chunks/turbopack-Desktop_projects_barber-application_barber-app-backoffice_6941d1ce._.js"
   ],
   "pages": {},
   "ampFirstPages": []
