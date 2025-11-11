@@ -15,7 +15,8 @@ import {
   ChevronRight,
   CreditCard,
   FolderOpen,
-  ShieldCheck
+  ShieldCheck,
+  Award
 } from 'lucide-react';
 import { useState } from 'react';
 import { authService } from '@/lib/auth';
@@ -39,6 +40,7 @@ const navigation: NavItem[] = [
   { name: 'Barberías', href: '/dashboard/barbershops', icon: Scissors },
   { name: 'Citas', href: '/dashboard/appointments', icon: Calendar },
   { name: 'Promociones', href: '/dashboard/promotions', icon: Tag },
+  { name: 'Especialidades', href: '/dashboard/specialties', icon: Award },
   { 
     name: 'General', 
     icon: FolderOpen,
