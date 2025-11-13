@@ -248,7 +248,7 @@ export default function DashboardPage() {
             </div>
             <ChartComponent
               type="line"
-              data={appointmentsByMonth}
+              data={appointmentsByMonth as Array<Record<string, any>>}
               dataKey="count"
               xAxisKey="month"
               color="#6366f1"
@@ -263,7 +263,7 @@ export default function DashboardPage() {
             </div>
             <ChartComponent
               type="bar"
-              data={revenueByMonth}
+              data={revenueByMonth as Array<Record<string, any>>}
               dataKey="revenue"
               xAxisKey="month"
               color="#10b981"
@@ -278,7 +278,7 @@ export default function DashboardPage() {
             </div>
             <ChartComponent
               type="pie"
-              data={appointmentsByStatus}
+              data={appointmentsByStatus as Array<Record<string, any>>}
               dataKey="count"
               nameKey="status"
               color="#8b5cf6"
