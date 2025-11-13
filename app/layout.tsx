@@ -5,8 +5,13 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Barber App - Panel de Administración",
-  description: "Panel de administración para Barber App",
+  title: "bartop - Panel de Administración",
+  description: "Panel de administración para bartop",
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({

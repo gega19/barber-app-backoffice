@@ -39,7 +39,10 @@ api.interceptors.response.use(
       // Token expirado o inválido
       Cookies.remove('token');
       Cookies.remove('refreshToken');
-      if (typeof window !== 'undefined') {
+      
+      // Solo redirigir si NO estamos ya en la página de login
+      // Esto evita que se limpie el error cuando hay credenciales incorrectas
+      if (typeof window !== 'undefined' && !window.location.pathname.includes('/login')) {
         window.location.href = '/login';
       }
     }

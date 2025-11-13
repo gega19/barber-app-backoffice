@@ -1,15 +1,21 @@
 {
   "app": {
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/appointments/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
     "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/general/payment-methods/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
-    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/notifications/page": [
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
     "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/payment/verification/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/promotions/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
     "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/specialties/page": [

@@ -41,8 +41,13 @@ var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$i
 ;
 ;
 const metadata = {
-    title: "Barber App - Panel de Administración",
-    description: "Panel de administración para Barber App"
+    title: "bartop - Panel de Administración",
+    description: "Panel de administración para bartop",
+    icons: {
+        icon: '/logo.png',
+        shortcut: '/logo.png',
+        apple: '/logo.png'
+    }
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -52,12 +57,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/layout.tsx",
-            lineNumber: 19,
+            lineNumber: 24,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/layout.tsx",
-        lineNumber: 18,
+        lineNumber: 23,
         columnNumber: 5
     }, this);
 }

@@ -1,0 +1,19 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx [app-client] (ecmascript, next/dynamic entry, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.all([
+  "static/chunks/2d413_recharts_es6_util_abd7e54c._.js",
+  "static/chunks/2d413_recharts_es6_state_25e441e8._.js",
+  "static/chunks/2d413_recharts_es6_component_f342d833._.js",
+  "static/chunks/2d413_recharts_es6_cartesian_847a9233._.js",
+  "static/chunks/2d413_recharts_es6_440ca136._.js",
+  "static/chunks/2d413_494fc521._.js",
+  "static/chunks/6cedf_barber-application_barber-app-backoffice_components_ChartComponent_tsx_ed2c0e13._.js",
+  "static/chunks/6cedf_barber-application_barber-app-backoffice_components_ChartComponent_tsx_d437ea68._.js"
+].map((chunk) => __turbopack_context__.l(chunk))).then(() => {
+        return parentImport("[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx [app-client] (ecmascript, next/dynamic entry)");
+    });
+});
+}),
+]);

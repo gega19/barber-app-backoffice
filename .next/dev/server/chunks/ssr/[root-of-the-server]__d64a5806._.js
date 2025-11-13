@@ -148,7 +148,9 @@ api.interceptors.response.use((response)=>response, (error)=>{
         // Token expirado o inválido
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$js$2d$cookie$2f$dist$2f$js$2e$cookie$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].remove('token');
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$js$2d$cookie$2f$dist$2f$js$2e$cookie$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].remove('refreshToken');
-        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        // Solo redirigir si NO estamos ya en la página de login
+        // Esto evita que se limpie el error cuando hay credenciales incorrectas
+        if (("TURBOPACK compile-time value", "undefined") !== 'undefined' && !window.location.pathname.includes('/login')) //TURBOPACK unreachable
         ;
     }
     return Promise.reject(error);
@@ -402,7 +404,7 @@ function LoginPage() {
                                             ...register('email'),
                                             type: "email",
                                             id: "email",
-                                            className: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition",
+                                            className: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition bg-white text-gray-900 placeholder:text-gray-400",
                                             placeholder: "admin@barberapp.com"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/login/page.tsx",
@@ -438,7 +440,7 @@ function LoginPage() {
                                             ...register('password'),
                                             type: "password",
                                             id: "password",
-                                            className: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition",
+                                            className: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition bg-white text-gray-900 placeholder:text-gray-400",
                                             placeholder: "••••••••"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/login/page.tsx",

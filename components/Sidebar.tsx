@@ -134,11 +134,36 @@ export default function Sidebar() {
         <div className="h-full flex flex-col">
           {/* Logo */}
           <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-                <Scissors className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-gray-900">Barber App</span>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/logo.png" 
+                alt="bartop" 
+                className="w-10 h-10 rounded-lg object-cover"
+                onError={(e) => {
+                  // Fallback si el logo no se carga
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent && !parent.querySelector('.fallback-icon')) {
+                    const fallback = document.createElement('div');
+                    fallback.className = 'w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center fallback-icon';
+                    parent.insertBefore(fallback, target);
+                    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    icon.setAttribute('class', 'w-6 h-6 text-white');
+                    icon.setAttribute('fill', 'none');
+                    icon.setAttribute('stroke', 'currentColor');
+                    icon.setAttribute('viewBox', '0 0 24 24');
+                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.setAttribute('stroke-linecap', 'round');
+                    path.setAttribute('stroke-linejoin', 'round');
+                    path.setAttribute('stroke-width', '2');
+                    path.setAttribute('d', 'M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z');
+                    icon.appendChild(path);
+                    fallback.appendChild(icon);
+                  }
+                }}
+              />
+              <span className="text-xl font-bold text-gray-900">bartop</span>
             </div>
             <button
               onClick={() => setIsMobileMenuOpen(false)}

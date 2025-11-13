@@ -67,10 +67,37 @@ export default function LoginPage() {
         <div className="bg-white rounded-2xl shadow-xl p-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-600 rounded-full mb-4">
-              <LogIn className="w-8 h-8 text-white" />
+            <div className="inline-flex items-center justify-center w-20 h-20 mb-4">
+              <img 
+                src="/logo.png" 
+                alt="bartop" 
+                className="w-20 h-20 rounded-full object-cover"
+                onError={(e) => {
+                  // Fallback si el logo no se carga
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent && !parent.querySelector('.fallback-icon')) {
+                    const fallback = document.createElement('div');
+                    fallback.className = 'w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center fallback-icon';
+                    parent.appendChild(fallback);
+                    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    icon.setAttribute('class', 'w-10 h-10 text-white');
+                    icon.setAttribute('fill', 'none');
+                    icon.setAttribute('stroke', 'currentColor');
+                    icon.setAttribute('viewBox', '0 0 24 24');
+                    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    path.setAttribute('stroke-linecap', 'round');
+                    path.setAttribute('stroke-linejoin', 'round');
+                    path.setAttribute('stroke-width', '2');
+                    path.setAttribute('d', 'M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1');
+                    icon.appendChild(path);
+                    fallback.appendChild(icon);
+                  }
+                }}
+              />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900">Barber App</h1>
+            <h1 className="text-3xl font-bold text-gray-900">bartop</h1>
             <p className="text-gray-600 mt-2">Panel de Administración</p>
           </div>
 
@@ -90,7 +117,7 @@ export default function LoginPage() {
                 {...register('email')}
                 type="email"
                 id="email"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition bg-white text-gray-900 placeholder:text-gray-400"
                 placeholder="admin@barberapp.com"
               />
               {errors.email && (
@@ -106,7 +133,7 @@ export default function LoginPage() {
                 {...register('password')}
                 type="password"
                 id="password"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition bg-white text-gray-900 placeholder:text-gray-400"
                 placeholder="••••••••"
               />
               {errors.password && (
@@ -136,7 +163,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <p className="text-center text-sm text-gray-600 mt-6">
-          © 2024 Barber App. Todos los derechos reservados.
+          © 2024 bartop. Todos los derechos reservados.
         </p>
       </div>
     </div>
