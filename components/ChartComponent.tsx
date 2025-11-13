@@ -2,13 +2,9 @@
 
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-interface ChartData {
-  [key: string]: string | number;
-}
-
 interface ChartComponentProps {
   type: 'line' | 'bar' | 'pie';
-  data: ChartData[];
+  data: Array<Record<string, any>>;
   dataKey: string;
   xAxisKey?: string;
   nameKey?: string;

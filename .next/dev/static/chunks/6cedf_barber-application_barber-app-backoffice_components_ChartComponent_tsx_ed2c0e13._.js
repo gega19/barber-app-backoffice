@@ -39,12 +39,12 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                 children: "No hay datos disponibles"
             }, void 0, false, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                lineNumber: 24,
+                lineNumber: 20,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-            lineNumber: 23,
+            lineNumber: 19,
             columnNumber: 7
         }, this);
     }
@@ -60,7 +60,7 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         stroke: "#e5e7eb"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 33,
+                        lineNumber: 29,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["XAxis"], {
@@ -71,7 +71,7 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 34,
+                        lineNumber: 30,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["YAxis"], {
@@ -81,7 +81,7 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 39,
+                        lineNumber: 35,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -92,12 +92,12 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 43,
+                        lineNumber: 39,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Legend"], {}, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 50,
+                        lineNumber: 46,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Line$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Line"], {
@@ -114,18 +114,18 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 51,
+                        lineNumber: 47,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                lineNumber: 32,
+                lineNumber: 28,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-            lineNumber: 31,
+            lineNumber: 27,
             columnNumber: 7
         }, this);
     }
@@ -141,7 +141,7 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         stroke: "#e5e7eb"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 68,
+                        lineNumber: 64,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["XAxis"], {
@@ -152,7 +152,7 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 69,
+                        lineNumber: 65,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["YAxis"], {
@@ -162,7 +162,7 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 74,
+                        lineNumber: 70,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -177,12 +177,12 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                             })}`
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 78,
+                        lineNumber: 74,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Legend"], {}, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 86,
+                        lineNumber: 82,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Bar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Bar"], {
@@ -196,18 +196,18 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         ]
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 87,
+                        lineNumber: 83,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                lineNumber: 67,
+                lineNumber: 63,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-            lineNumber: 66,
+            lineNumber: 62,
             columnNumber: 7
         }, this);
     }
@@ -241,12 +241,12 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                                 fill: COLORS[index % COLORS.length]
                             }, `cell-${index}`, false, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                                lineNumber: 121,
+                                lineNumber: 117,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 110,
+                        lineNumber: 106,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -257,23 +257,23 @@ function ChartComponent({ type, data, dataKey, xAxisKey, nameKey, color }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 124,
+                        lineNumber: 120,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Legend$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Legend"], {}, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                        lineNumber: 131,
+                        lineNumber: 127,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-                lineNumber: 109,
+                lineNumber: 105,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/ChartComponent.tsx",
-            lineNumber: 108,
+            lineNumber: 104,
             columnNumber: 7
         }, this);
     }
