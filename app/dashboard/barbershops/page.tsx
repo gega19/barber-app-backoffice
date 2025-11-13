@@ -291,7 +291,9 @@ export default function BarbershopsPage() {
       setDeleteConfirm(null);
       loadWorkplaces();
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Error al eliminar barbería');
+      const errorMessage = err.response?.data?.message || err.message || 'Error al eliminar barbería';
+      setError(errorMessage);
+      setDeleteConfirm(null); // Cerrar el modal de confirmación para que el usuario vea el error
     }
   };
 
@@ -319,10 +321,23 @@ export default function BarbershopsPage() {
 
       {/* Error message */}
       {error && (
-        <div className="mb-6 bg-red-50 border-l-4 border-red-500 text-red-700 px-4 py-3 rounded-lg shadow-sm">
-          <div className="flex items-center">
-            <X className="w-5 h-5 mr-2" />
-            {error}
+        <div className="mb-6 bg-red-50 border-l-4 border-red-500 text-red-700 px-4 py-3 rounded-lg shadow-sm animate-fade-in">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <X className="w-5 h-5 mr-2 flex-shrink-0" />
+              <span className="font-medium">
+                {error.includes('associated barbers') || error.includes('barberos asociados')
+                  ? 'No se puede eliminar la barbería porque tiene barberos activos trabajando ahí. Por favor, elimina o reasigna los barberos primero.'
+                  : error}
+              </span>
+            </div>
+            <button
+              onClick={() => setError(null)}
+              className="ml-4 text-red-500 hover:text-red-700 transition-colors"
+              aria-label="Cerrar"
+            >
+              <X className="w-4 h-4" />
+            </button>
           </div>
         </div>
       )}
