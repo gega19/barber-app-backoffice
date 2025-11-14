@@ -18,6 +18,13 @@ const getImageUrl = (url: string): string => {
   return `${baseUrl}${url}`;
 };
 
+// Helper para truncar texto a un máximo de caracteres
+const truncateText = (text: string | null | undefined, maxLength: number = 50): string => {
+  if (!text) return '-';
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength) + '...';
+};
+
 const workplaceSchema = z.object({
   name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
   address: z.string().optional(),
@@ -473,13 +480,23 @@ export default function BarbershopsPage() {
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4">
                         <div className="flex items-center gap-1 text-sm text-gray-900">
-                          <MapPin className="w-4 h-4 text-gray-400" />
-                          <div>
-                            {workplace.address && <div>{workplace.address}</div>}
-                            {workplace.city && <div className="text-gray-500">{workplace.city}</div>}
-                            {!workplace.address && !workplace.city && <span className="text-gray-400">-</span>}
+                          <MapPin className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                          <div className="min-w-0">
+                            {workplace.address && (
+                              <div className="truncate" title={workplace.address}>
+                                {truncateText(workplace.address, 40)}
+                              </div>
+                            )}
+                            {workplace.city && (
+                              <div className="text-gray-500 truncate" title={workplace.city}>
+                                {truncateText(workplace.city, 40)}
+                              </div>
+                            )}
+                            {!workplace.address && !workplace.city && (
+                              <span className="text-gray-400">-</span>
+                            )}
                           </div>
                         </div>
                       </td>
