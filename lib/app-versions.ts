@@ -1,4 +1,5 @@
-import api, { createFormDataRequest } from './api';
+import api from './api';
+import Cookies from 'js-cookie';
 
 export interface AppVersion {
   id: string;
@@ -67,6 +68,19 @@ export const appVersionsService = {
 
   async createVersion(data: CreateAppVersionData): Promise<AppVersion> {
     const formData = new FormData();
+    
+    // Verificar que el archivo existe
+    if (!data.apk || !(data.apk instanceof File)) {
+      throw new Error('El archivo APK es requerido');
+    }
+    
+    console.log('📦 Creating app version...');
+    console.log('📄 File:', {
+      name: data.apk.name,
+      size: data.apk.size,
+      type: data.apk.type,
+    });
+    
     formData.append('apk', data.apk);
     formData.append('version', data.version);
     formData.append('versionCode', data.versionCode.toString());
@@ -77,19 +91,21 @@ export const appVersionsService = {
       formData.append('isActive', data.isActive.toString());
     }
 
-    const config = {
-      method: 'POST',
-      url: '/admin/app/versions',
-      data: formData,
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    };
+    // Verificar que el archivo está en el FormData
+    const apkInFormData = formData.get('apk');
+    console.log('✅ File in FormData:', apkInFormData instanceof File ? 'Yes' : 'No');
 
-    // Aplicar el helper para FormData (remueve Content-Type para que el browser lo establezca)
-    const finalConfig = createFormDataRequest(config);
+    // Obtener token de cookies
+    const token = Cookies.get('token');
+    const headers: Record<string, string> = {};
+    if (token) {
+      headers.Authorization = `Bearer ${token}`;
+    }
+    // No establecer Content-Type - el browser lo hará automáticamente con el boundary
 
-    const response = await api.request<AppVersionResponse>(finalConfig);
+    const response = await api.post<AppVersionResponse>('/admin/app/versions', formData, {
+      headers,
+    });
     return response.data.data;
   },
 
