@@ -17,7 +17,9 @@ import {
   FolderOpen,
   ShieldCheck,
   Award,
-  Send
+  Send,
+  Smartphone,
+  FileText
 } from 'lucide-react';
 import { useState } from 'react';
 import { authService } from '@/lib/auth';
@@ -43,6 +45,8 @@ const navigation: NavItem[] = [
   { name: 'Promociones', href: '/dashboard/promotions', icon: Tag },
   { name: 'Especialidades', href: '/dashboard/specialties', icon: Award },
   { name: 'Campañas', href: '/dashboard/campaigns', icon: Send },
+  { name: 'Versiones APK', href: '/dashboard/app-versions', icon: Smartphone },
+  { name: 'Documentos Legales', href: '/dashboard/legal-documents', icon: FileText },
   { 
     name: 'General', 
     icon: FolderOpen,
