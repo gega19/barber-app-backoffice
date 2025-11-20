@@ -22,13 +22,15 @@ export default function MapComponent({ center, zoom, currentPosition, onLocation
 
     setIsClient(true);
 
+    // Cargar estilos de Leaflet
+    import('leaflet/dist/leaflet.css').catch(() => {});
+
     // Cargar react-leaflet dinámicamente
     Promise.all([
       import('react-leaflet'),
       import('leaflet'),
       import('leaflet/dist/images/marker-icon.png'),
       import('leaflet/dist/images/marker-shadow.png'),
-      import('leaflet/dist/leaflet.css'),
     ]).then(([reactLeaflet, L, iconMod, shadowMod]) => {
       setMapContainer(() => reactLeaflet.MapContainer);
       setTileLayer(() => reactLeaflet.TileLayer);
