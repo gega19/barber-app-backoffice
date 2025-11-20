@@ -4,29 +4,15 @@ import { useState, useEffect } from 'react';
 import { MapPin, Navigation, X } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
-// Importar Leaflet dinámicamente para evitar problemas de SSR
-const MapContainer = dynamic(() => import('react-leaflet').then((mod) => mod.MapContainer), { ssr: false });
-const TileLayer = dynamic(() => import('react-leaflet').then((mod) => mod.TileLayer), { ssr: false });
-const Marker = dynamic(() => import('react-leaflet').then((mod) => mod.Marker), { ssr: false });
-
-// Importar estilos de Leaflet
-import 'leaflet/dist/leaflet.css';
-
-// Fix para los iconos de Leaflet en Next.js
-import L from 'leaflet';
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-
-const DefaultIcon = L.icon({
-  iconUrl: icon.src,
-  shadowUrl: iconShadow.src,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
+// Importar todo el mapa dinámicamente para evitar problemas de SSR
+const MapComponent = dynamic(() => import('./MapComponent'), { 
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center h-full bg-gray-100">
+      <div className="text-gray-500">Cargando mapa...</div>
+    </div>
+  ),
 });
-
-L.Marker.prototype.options.icon = DefaultIcon;
 
 interface LocationPickerProps {
   latitude?: number | null;
@@ -35,19 +21,6 @@ interface LocationPickerProps {
   onClear?: () => void;
 }
 
-// Componente interno para manejar eventos del mapa
-function MapClickHandler({ onLocationChange }: { onLocationChange: (lat: number, lng: number) => void }) {
-  if (typeof window === 'undefined') return null;
-  
-  // Importar useMapEvents dinámicamente
-  const ReactLeaflet = require('react-leaflet');
-  const map = ReactLeaflet.useMapEvents({
-    click: (e: any) => {
-      onLocationChange(e.latlng.lat, e.latlng.lng);
-    },
-  });
-  return null;
-}
 
 export default function LocationPicker({ latitude, longitude, onLocationChange, onClear }: LocationPickerProps) {
   const [mapKey, setMapKey] = useState(0);
@@ -127,24 +100,13 @@ export default function LocationPicker({ latitude, longitude, onLocationChange, 
       </div>
 
       <div className="border-2 border-gray-300 rounded-lg overflow-hidden" style={{ height: '400px' }}>
-        {typeof window !== 'undefined' && (
-          <MapContainer
-            key={mapKey}
-            center={center}
-            zoom={currentPosition ? 15 : 12}
-            style={{ height: '100%', width: '100%' }}
-            className="z-0"
-          >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            {currentPosition && (
-              <Marker position={[currentPosition.lat, currentPosition.lng]} />
-            )}
-            <MapClickHandler onLocationChange={handleMapClick} />
-          </MapContainer>
-        )}
+        <MapComponent
+          key={mapKey}
+          center={center}
+          zoom={currentPosition ? 15 : 12}
+          currentPosition={currentPosition}
+          onLocationChange={handleMapClick}
+        />
       </div>
 
       {currentPosition && (
