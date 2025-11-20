@@ -7,7 +7,17 @@ import { uploadService } from '@/lib/upload';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import LocationPicker from '@/components/map/LocationPicker';
+import dynamic from 'next/dynamic';
+
+// Importar LocationPicker dinámicamente para evitar problemas con Turbopack
+const LocationPicker = dynamic(() => import('@/components/map/LocationPicker'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center h-96 bg-gray-100 rounded-lg">
+      <div className="text-gray-500">Cargando selector de ubicación...</div>
+    </div>
+  ),
+});
 
 // Helper para construir URLs de imágenes (sin /api)
 const getImageUrl = (url: string): string => {

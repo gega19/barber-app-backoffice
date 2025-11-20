@@ -22,6 +22,11 @@ export default function MapComponent({ center, zoom, currentPosition, onLocation
 
     setIsClient(true);
 
+    // Cargar estilos de Leaflet
+    import('leaflet/dist/leaflet.css').catch(() => {
+      // Ignorar errores de carga de CSS
+    });
+
     // Cargar react-leaflet dinámicamente
     Promise.all([
       import('react-leaflet'),
@@ -44,6 +49,8 @@ export default function MapComponent({ center, zoom, currentPosition, onLocation
         shadowSize: [41, 41],
       });
       L.default.Marker.prototype.options.icon = DefaultIcon;
+    }).catch((error) => {
+      console.error('Error loading map components:', error);
     });
   }, []);
 

@@ -4,12 +4,6 @@ import { useState, useEffect } from 'react';
 import { MapPin, Navigation, X } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
-// Cargar estilos de Leaflet solo en el cliente
-if (typeof window !== 'undefined') {
-  // @ts-ignore - CSS no tiene tipos en TypeScript
-  require('leaflet/dist/leaflet.css');
-}
-
 // Importar todo el mapa dinámicamente para evitar problemas de SSR
 const MapComponent = dynamic(() => import('./MapComponent'), { 
   ssr: false,
