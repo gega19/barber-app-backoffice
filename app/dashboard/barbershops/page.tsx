@@ -7,6 +7,7 @@ import { uploadService } from '@/lib/upload';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import LocationPicker from '@/components/map/LocationPicker';
 
 // Helper para construir URLs de imágenes (sin /api)
 const getImageUrl = (url: string): string => {
@@ -29,6 +30,8 @@ const workplaceSchema = z.object({
   name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
   address: z.string().optional(),
   city: z.string().optional(),
+  latitude: z.number().min(-90).max(90).optional().nullable(),
+  longitude: z.number().min(-180).max(180).optional().nullable(),
   description: z.string().optional(),
   image: z.string().optional(),
   banner: z.string().optional(),
@@ -138,6 +141,8 @@ export default function BarbershopsPage() {
       name: '',
       address: '',
       city: '',
+      latitude: null,
+      longitude: null,
       description: '',
       image: '',
       banner: '',
@@ -151,6 +156,8 @@ export default function BarbershopsPage() {
     setValue('name', workplace.name);
     setValue('address', workplace.address || '');
     setValue('city', workplace.city || '');
+    setValue('latitude', workplace.latitude ?? null);
+    setValue('longitude', workplace.longitude ?? null);
     setValue('description', workplace.description || '');
     setValue('image', workplace.image || '');
     setValue('banner', workplace.banner || '');
@@ -266,6 +273,8 @@ export default function BarbershopsPage() {
           name: data.name,
           address: data.address || undefined,
           city: data.city || undefined,
+          latitude: data.latitude ?? undefined,
+          longitude: data.longitude ?? undefined,
           description: data.description || undefined,
           image: data.image || undefined,
           banner: data.banner || undefined,
@@ -276,6 +285,8 @@ export default function BarbershopsPage() {
           name: data.name,
           address: data.address || undefined,
           city: data.city || undefined,
+          latitude: data.latitude ?? undefined,
+          longitude: data.longitude ?? undefined,
           description: data.description || undefined,
           image: data.image || undefined,
           banner: data.banner || undefined,
@@ -816,6 +827,25 @@ export default function BarbershopsPage() {
                       {...register('city')}
                       type="text"
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+                    />
+                  </div>
+
+                  {/* Campos ocultos para coordenadas */}
+                  <input type="hidden" {...register('latitude', { valueAsNumber: true })} />
+                  <input type="hidden" {...register('longitude', { valueAsNumber: true })} />
+
+                  <div className="col-span-2">
+                    <LocationPicker
+                      latitude={watch('latitude')}
+                      longitude={watch('longitude')}
+                      onLocationChange={(lat, lng) => {
+                        setValue('latitude', lat, { shouldValidate: true });
+                        setValue('longitude', lng, { shouldValidate: true });
+                      }}
+                      onClear={() => {
+                        setValue('latitude', null);
+                        setValue('longitude', null);
+                      }}
                     />
                   </div>
 

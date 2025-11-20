@@ -5,6 +5,8 @@ export interface Workplace {
   name: string;
   address?: string | null;
   city?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
   description?: string | null;
   image?: string | null;
   banner?: string | null;
@@ -20,6 +22,8 @@ export interface CreateWorkplaceData {
   name: string;
   address?: string;
   city?: string;
+  latitude?: number;
+  longitude?: number;
   description?: string;
   image?: string;
   banner?: string;
@@ -29,6 +33,8 @@ export interface UpdateWorkplaceData {
   name?: string;
   address?: string;
   city?: string;
+  latitude?: number;
+  longitude?: number;
   description?: string;
   image?: string;
   banner?: string;
