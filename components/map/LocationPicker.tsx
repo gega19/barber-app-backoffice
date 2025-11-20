@@ -40,8 +40,8 @@ function MapClickHandler({ onLocationChange }: { onLocationChange: (lat: number,
   if (typeof window === 'undefined') return null;
   
   // Importar useMapEvents dinámicamente
-  const { useMapEvents } = require('react-leaflet');
-  useMapEvents({
+  const ReactLeaflet = require('react-leaflet');
+  const map = ReactLeaflet.useMapEvents({
     click: (e: any) => {
       onLocationChange(e.latlng.lat, e.latlng.lng);
     },
