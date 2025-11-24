@@ -10,6 +10,8 @@ export interface Workplace {
   description?: string | null;
   image?: string | null;
   banner?: string | null;
+  instagramUrl?: string | null;
+  tiktokUrl?: string | null;
   rating: number;
   reviews: number;
   barbersCount?: number;
@@ -27,6 +29,8 @@ export interface CreateWorkplaceData {
   description?: string;
   image?: string;
   banner?: string;
+  instagramUrl?: string;
+  tiktokUrl?: string;
 }
 
 export interface UpdateWorkplaceData {
@@ -38,6 +42,8 @@ export interface UpdateWorkplaceData {
   description?: string;
   image?: string;
   banner?: string;
+  instagramUrl?: string;
+  tiktokUrl?: string;
 }
 
 export interface WorkplacesResponse {

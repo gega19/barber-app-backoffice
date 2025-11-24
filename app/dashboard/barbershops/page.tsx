@@ -45,6 +45,14 @@ const workplaceSchema = z.object({
   description: z.string().optional(),
   image: z.string().optional(),
   banner: z.string().optional(),
+  instagramUrl: z.string().optional().refine(
+    (val) => !val || val.trim() === '' || z.string().url().safeParse(val).success,
+    { message: 'Debe ser una URL válida o @usuario' }
+  ),
+  tiktokUrl: z.string().optional().refine(
+    (val) => !val || val.trim() === '' || z.string().url().safeParse(val).success,
+    { message: 'Debe ser una URL válida o @usuario' }
+  ),
 });
 
 type WorkplaceFormData = z.infer<typeof workplaceSchema>;
@@ -156,6 +164,8 @@ export default function BarbershopsPage() {
       description: '',
       image: '',
       banner: '',
+      instagramUrl: '',
+      tiktokUrl: '',
     });
     setIsModalOpen(true);
   };
@@ -171,6 +181,8 @@ export default function BarbershopsPage() {
     setValue('description', workplace.description || '');
     setValue('image', workplace.image || '');
     setValue('banner', workplace.banner || '');
+    setValue('instagramUrl', workplace.instagramUrl || '');
+    setValue('tiktokUrl', workplace.tiktokUrl || '');
     setIsModalOpen(true);
   };
 
@@ -288,6 +300,8 @@ export default function BarbershopsPage() {
           description: data.description || undefined,
           image: data.image || undefined,
           banner: data.banner || undefined,
+          instagramUrl: data.instagramUrl && data.instagramUrl.trim() ? data.instagramUrl.trim() : undefined,
+          tiktokUrl: data.tiktokUrl && data.tiktokUrl.trim() ? data.tiktokUrl.trim() : undefined,
         };
         await workplacesService.updateWorkplace(selectedWorkplace.id, updateData);
       } else {
@@ -300,6 +314,8 @@ export default function BarbershopsPage() {
           description: data.description || undefined,
           image: data.image || undefined,
           banner: data.banner || undefined,
+          instagramUrl: data.instagramUrl && data.instagramUrl.trim() ? data.instagramUrl.trim() : undefined,
+          tiktokUrl: data.tiktokUrl && data.tiktokUrl.trim() ? data.tiktokUrl.trim() : undefined,
         };
         await workplacesService.createWorkplace(createData);
       }
@@ -866,6 +882,39 @@ export default function BarbershopsPage() {
                       rows={3}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
                     />
+                  </div>
+
+                  <div className="col-span-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Redes Sociales</label>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs text-gray-600 mb-1">Instagram</label>
+                        <input
+                          {...register('instagramUrl')}
+                          type="text"
+                          placeholder="@usuario o https://instagram.com/usuario"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+                        />
+                        {errors.instagramUrl && (
+                          <p className="mt-1 text-xs text-red-600">{errors.instagramUrl.message}</p>
+                        )}
+                      </div>
+                      <div>
+                        <label className="block text-xs text-gray-600 mb-1">TikTok</label>
+                        <input
+                          {...register('tiktokUrl')}
+                          type="text"
+                          placeholder="@usuario o https://tiktok.com/@usuario"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+                        />
+                        {errors.tiktokUrl && (
+                          <p className="mt-1 text-xs text-red-600">{errors.tiktokUrl.message}</p>
+                        )}
+                      </div>
+                    </div>
+                    <p className="mt-1 text-xs text-gray-500">
+                      Puedes usar @usuario o la URL completa. El sistema normalizará automáticamente.
+                    </p>
                   </div>
 
                   <div className="col-span-2">
