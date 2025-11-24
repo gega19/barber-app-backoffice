@@ -10,6 +10,10 @@ export interface AppVersion {
   releaseNotes?: string | null;
   isActive: boolean;
   downloadCount: number;
+  minimumVersionCode?: number | null;
+  updateUrl?: string | null;
+  updateType?: string | null; // "store" | "url" | "apk"
+  forceUpdate?: boolean;
   createdBy?: string | null;
   createdAt: string;
   updatedAt: string;
@@ -23,6 +27,10 @@ export interface CreateAppVersionData {
   versionCode: number;
   releaseNotes?: string;
   isActive?: boolean;
+  minimumVersionCode?: number;
+  updateUrl?: string;
+  updateType?: string; // "store" | "url" | "apk"
+  forceUpdate?: boolean;
   apk: File;
 }
 
@@ -30,6 +38,10 @@ export interface UpdateAppVersionData {
   version?: string;
   releaseNotes?: string;
   isActive?: boolean;
+  minimumVersionCode?: number | null;
+  updateUrl?: string | null;
+  updateType?: string | null; // "store" | "url" | "apk"
+  forceUpdate?: boolean;
 }
 
 export interface AppVersionsResponse {
@@ -89,6 +101,18 @@ export const appVersionsService = {
     }
     if (data.isActive !== undefined) {
       formData.append('isActive', data.isActive.toString());
+    }
+    if (data.minimumVersionCode !== undefined) {
+      formData.append('minimumVersionCode', data.minimumVersionCode.toString());
+    }
+    if (data.updateUrl) {
+      formData.append('updateUrl', data.updateUrl);
+    }
+    if (data.updateType) {
+      formData.append('updateType', data.updateType);
+    }
+    if (data.forceUpdate !== undefined) {
+      formData.append('forceUpdate', data.forceUpdate.toString());
     }
 
     // Verificar que el archivo está en el FormData

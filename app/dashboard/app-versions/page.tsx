@@ -12,7 +12,9 @@ import {
   Download,
   FileText,
   Calendar,
-  Package
+  Package,
+  Edit,
+  AlertCircle
 } from 'lucide-react';
 
 export default function AppVersionsPage() {
@@ -22,12 +24,17 @@ export default function AppVersionsPage() {
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
+  const [editingVersion, setEditingVersion] = useState<AppVersion | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [formData, setFormData] = useState({
     version: '',
     versionCode: '',
     releaseNotes: '',
     isActive: false,
+    minimumVersionCode: '',
+    updateUrl: '',
+    updateType: 'apk',
+    forceUpdate: false,
   });
 
   useEffect(() => {
@@ -82,6 +89,28 @@ export default function AppVersionsPage() {
       return;
     }
 
+    // Validar minimumVersionCode <= versionCode
+    if (formData.minimumVersionCode) {
+      const minVersionCode = parseInt(formData.minimumVersionCode, 10);
+      const versionCode = parseInt(formData.versionCode, 10);
+      if (minVersionCode > versionCode) {
+        setError('La versión mínima no puede ser mayor que el código de versión');
+        return;
+      }
+    }
+
+    // Validar updateType
+    if (formData.updateType && !['store', 'url', 'apk'].includes(formData.updateType)) {
+      setError('El tipo de actualización debe ser: store, url o apk');
+      return;
+    }
+
+    // Validar updateUrl si updateType es 'url'
+    if (formData.updateType === 'url' && !formData.updateUrl) {
+      setError('La URL de actualización es requerida cuando el tipo es "url"');
+      return;
+    }
+
     setIsSubmitting(true);
     setError(null);
     setSuccess(null);
@@ -92,6 +121,10 @@ export default function AppVersionsPage() {
         versionCode: parseInt(formData.versionCode, 10),
         releaseNotes: formData.releaseNotes || undefined,
         isActive: formData.isActive,
+        minimumVersionCode: formData.minimumVersionCode ? parseInt(formData.minimumVersionCode, 10) : undefined,
+        updateUrl: formData.updateUrl || undefined,
+        updateType: formData.updateType || undefined,
+        forceUpdate: formData.forceUpdate,
         apk: selectedFile,
       };
 
@@ -105,6 +138,10 @@ export default function AppVersionsPage() {
         versionCode: '',
         releaseNotes: '',
         isActive: false,
+        minimumVersionCode: '',
+        updateUrl: '',
+        updateType: 'apk',
+        forceUpdate: false,
       });
       loadVersions();
     } catch (err: any) {
@@ -139,6 +176,84 @@ export default function AppVersionsPage() {
       loadVersions();
     } catch (err: any) {
       setError(err.response?.data?.message || 'Error al eliminar versión');
+    }
+  };
+
+  const handleEdit = (version: AppVersion) => {
+    setEditingVersion(version);
+    setFormData({
+      version: version.version,
+      versionCode: version.versionCode.toString(),
+      releaseNotes: version.releaseNotes || '',
+      isActive: version.isActive,
+      minimumVersionCode: version.minimumVersionCode?.toString() || '',
+      updateUrl: version.updateUrl || '',
+      updateType: version.updateType || 'apk',
+      forceUpdate: version.forceUpdate || false,
+    });
+    setShowForm(true);
+  };
+
+  const handleUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!editingVersion) return;
+
+    // Validar minimumVersionCode <= versionCode
+    if (formData.minimumVersionCode) {
+      const minVersionCode = parseInt(formData.minimumVersionCode, 10);
+      const versionCode = parseInt(formData.versionCode, 10);
+      if (minVersionCode > versionCode) {
+        setError('La versión mínima no puede ser mayor que el código de versión');
+        return;
+      }
+    }
+
+    // Validar updateType
+    if (formData.updateType && !['store', 'url', 'apk'].includes(formData.updateType)) {
+      setError('El tipo de actualización debe ser: store, url o apk');
+      return;
+    }
+
+    // Validar updateUrl si updateType es 'url'
+    if (formData.updateType === 'url' && !formData.updateUrl) {
+      setError('La URL de actualización es requerida cuando el tipo es "url"');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      await appVersionsService.updateVersion(editingVersion.id, {
+        version: formData.version,
+        releaseNotes: formData.releaseNotes || undefined,
+        isActive: formData.isActive,
+        minimumVersionCode: formData.minimumVersionCode ? parseInt(formData.minimumVersionCode, 10) : null,
+        updateUrl: formData.updateUrl || null,
+        updateType: formData.updateType || null,
+        forceUpdate: formData.forceUpdate,
+      });
+
+      setSuccess('Versión actualizada exitosamente');
+      setShowForm(false);
+      setEditingVersion(null);
+      setFormData({
+        version: '',
+        versionCode: '',
+        releaseNotes: '',
+        isActive: false,
+        minimumVersionCode: '',
+        updateUrl: '',
+        updateType: 'apk',
+        forceUpdate: false,
+      });
+      loadVersions();
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Error al actualizar versión');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -203,11 +318,13 @@ export default function AppVersionsPage() {
         </div>
       )}
 
-      {/* Formulario de nueva versión */}
+      {/* Formulario de nueva versión / edición */}
       {showForm && (
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Subir Nueva Versión</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            {editingVersion ? 'Editar Versión' : 'Subir Nueva Versión'}
+          </h2>
+          <form onSubmit={editingVersion ? handleUpdate : handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="version" className="block text-sm font-medium text-gray-700 mb-2">
@@ -237,32 +354,37 @@ export default function AppVersionsPage() {
                   onChange={(e) => setFormData({ ...formData, versionCode: e.target.value })}
                   placeholder="1"
                   min="1"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-gray-900"
+                  disabled={!!editingVersion}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-gray-900 disabled:bg-gray-100 disabled:cursor-not-allowed"
                   required
                 />
-                <p className="mt-1 text-xs text-gray-500">Debe ser mayor que el código anterior</p>
+                <p className="mt-1 text-xs text-gray-500">
+                  {editingVersion ? 'No se puede modificar el código de versión' : 'Debe ser mayor que el código anterior'}
+                </p>
               </div>
             </div>
 
-            <div>
-              <label htmlFor="apk" className="block text-sm font-medium text-gray-700 mb-2">
-                Archivo APK *
-              </label>
-              <input
-                type="file"
-                id="apk"
-                accept=".apk"
-                onChange={handleFileChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-gray-900"
-                required
-              />
-              {selectedFile && (
-                <p className="mt-2 text-sm text-gray-600">
-                  Archivo seleccionado: {selectedFile.name} ({formatFileSize(selectedFile.size)})
-                </p>
-              )}
-              <p className="mt-1 text-xs text-gray-500">Tamaño máximo: 100 MB</p>
-            </div>
+            {!editingVersion && (
+              <div>
+                <label htmlFor="apk" className="block text-sm font-medium text-gray-700 mb-2">
+                  Archivo APK *
+                </label>
+                <input
+                  type="file"
+                  id="apk"
+                  accept=".apk"
+                  onChange={handleFileChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-gray-900"
+                  required
+                />
+                {selectedFile && (
+                  <p className="mt-2 text-sm text-gray-600">
+                    Archivo seleccionado: {selectedFile.name} ({formatFileSize(selectedFile.size)})
+                  </p>
+                )}
+                <p className="mt-1 text-xs text-gray-500">Tamaño máximo: 100 MB</p>
+              </div>
+            )}
 
             <div>
               <label htmlFor="releaseNotes" className="block text-sm font-medium text-gray-700 mb-2">
@@ -278,6 +400,66 @@ export default function AppVersionsPage() {
               />
             </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="minimumVersionCode" className="block text-sm font-medium text-gray-700 mb-2">
+                  Versión Mínima Requerida
+                </label>
+                <input
+                  type="number"
+                  id="minimumVersionCode"
+                  value={formData.minimumVersionCode}
+                  onChange={(e) => setFormData({ ...formData, minimumVersionCode: e.target.value })}
+                  placeholder="Ej: 2"
+                  min="1"
+                  max={formData.versionCode || undefined}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-gray-900"
+                />
+                <p className="mt-1 text-xs text-gray-500">
+                  Versión mínima que los usuarios deben tener. Debe ser ≤ código de versión.
+                </p>
+              </div>
+
+              <div>
+                <label htmlFor="updateType" className="block text-sm font-medium text-gray-700 mb-2">
+                  Tipo de Actualización
+                </label>
+                <select
+                  id="updateType"
+                  value={formData.updateType}
+                  onChange={(e) => setFormData({ ...formData, updateType: e.target.value })}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-gray-900"
+                >
+                  <option value="apk">APK Directo</option>
+                  <option value="store">Tienda (Play Store/App Store)</option>
+                  <option value="url">URL Personalizada</option>
+                </select>
+                <p className="mt-1 text-xs text-gray-500">
+                  Cómo se actualizará la app cuando sea necesario
+                </p>
+              </div>
+            </div>
+
+            {formData.updateType === 'url' && (
+              <div>
+                <label htmlFor="updateUrl" className="block text-sm font-medium text-gray-700 mb-2">
+                  URL de Actualización *
+                </label>
+                <input
+                  type="url"
+                  id="updateUrl"
+                  value={formData.updateUrl}
+                  onChange={(e) => setFormData({ ...formData, updateUrl: e.target.value })}
+                  placeholder="https://ejemplo.com/descargar"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white text-gray-900"
+                  required={formData.updateType === 'url'}
+                />
+                <p className="mt-1 text-xs text-gray-500">
+                  URL donde los usuarios descargarán la actualización
+                </p>
+              </div>
+            )}
+
             <div className="flex items-center gap-2">
               <input
                 type="checkbox"
@@ -291,21 +473,34 @@ export default function AppVersionsPage() {
               </label>
             </div>
 
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                id="forceUpdate"
+                checked={formData.forceUpdate}
+                onChange={(e) => setFormData({ ...formData, forceUpdate: e.target.checked })}
+                className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+              />
+              <label htmlFor="forceUpdate" className="text-sm font-medium text-gray-700">
+                Forzar actualización (bloquear app si la versión es menor)
+              </label>
+            </div>
+
             <div className="flex gap-3">
               <button
                 type="submit"
-                disabled={isSubmitting || !selectedFile}
+                disabled={isSubmitting || (!editingVersion && !selectedFile)}
                 className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Subiendo...</span>
+                    <span>{editingVersion ? 'Actualizando...' : 'Subiendo...'}</span>
                   </>
                 ) : (
                   <>
-                    <Upload className="w-5 h-5" />
-                    <span>Subir Versión</span>
+                    {editingVersion ? <Edit className="w-5 h-5" /> : <Upload className="w-5 h-5" />}
+                    <span>{editingVersion ? 'Actualizar Versión' : 'Subir Versión'}</span>
                   </>
                 )}
               </button>
@@ -313,12 +508,17 @@ export default function AppVersionsPage() {
                 type="button"
                 onClick={() => {
                   setShowForm(false);
+                  setEditingVersion(null);
                   setSelectedFile(null);
                   setFormData({
                     version: '',
                     versionCode: '',
                     releaseNotes: '',
                     isActive: false,
+                    minimumVersionCode: '',
+                    updateUrl: '',
+                    updateType: 'apk',
+                    forceUpdate: false,
                   });
                   setError(null);
                 }}
@@ -354,6 +554,8 @@ export default function AppVersionsPage() {
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Versión</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Versión Mínima</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actualización</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tamaño</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descargas</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
@@ -385,6 +587,39 @@ export default function AppVersionsPage() {
                       )}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {version.minimumVersionCode ? (
+                        <div className="flex items-center gap-1">
+                          <AlertCircle className="w-4 h-4 text-orange-500" />
+                          <span className="font-medium">{version.minimumVersionCode}</span>
+                          {version.forceUpdate && (
+                            <span className="text-xs text-red-600 font-semibold">(Forzado)</span>
+                          )}
+                        </div>
+                      ) : (
+                        <span className="text-gray-400">-</span>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      {version.updateType ? (
+                        <div className="flex flex-col gap-1">
+                          <span className="font-medium capitalize">{version.updateType}</span>
+                          {version.updateUrl && version.updateType === 'url' && (
+                            <a
+                              href={version.updateUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs text-indigo-600 hover:underline truncate max-w-xs"
+                              title={version.updateUrl}
+                            >
+                              {version.updateUrl}
+                            </a>
+                          )}
+                        </div>
+                      ) : (
+                        <span className="text-gray-400">-</span>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {formatFileSize(version.apkSize)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -401,10 +636,17 @@ export default function AppVersionsPage() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => handleEdit(version)}
+                          className="text-indigo-600 hover:text-indigo-900"
+                          title="Editar versión"
+                        >
+                          <Edit className="w-4 h-4" />
+                        </button>
                         {!version.isActive && (
                           <button
                             onClick={() => handleActivate(version.id)}
-                            className="text-indigo-600 hover:text-indigo-900 flex items-center gap-1"
+                            className="text-green-600 hover:text-green-900 flex items-center gap-1"
                             title="Activar versión"
                           >
                             <Power className="w-4 h-4" />
