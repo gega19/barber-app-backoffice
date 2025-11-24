@@ -214,11 +214,13 @@ export default function AnalyticsPage() {
                 <Pie
                   data={stats.eventsByType}
                   dataKey="count"
-                  nameKey="eventType"
                   cx="50%"
                   cy="50%"
                   outerRadius={80}
-                  label={({ eventType, count }) => `${eventType}: ${count}`}
+                  label={(props: any) => {
+                    const { eventType, count } = props;
+                    return `${eventType}: ${count}`;
+                  }}
                 >
                   {stats.eventsByType.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
