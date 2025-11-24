@@ -19,7 +19,8 @@ import {
   Award,
   Send,
   Smartphone,
-  FileText
+  FileText,
+  BarChart3
 } from 'lucide-react';
 import { useState } from 'react';
 import { authService } from '@/lib/auth';
@@ -39,6 +40,7 @@ interface NavItem {
 
 const navigation: NavItem[] = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
+  { name: 'Analytics', href: '/dashboard/analytics', icon: BarChart3 },
   { name: 'Usuarios', href: '/dashboard/users', icon: Users },
   { name: 'Barberías', href: '/dashboard/barbershops', icon: Scissors },
   { name: 'Citas', href: '/dashboard/appointments', icon: Calendar },
