@@ -13,6 +13,7 @@ export interface User {
   country?: string | null;
   gender?: string | null;
   role: UserRole;
+  emailVerified?: boolean | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -86,6 +87,13 @@ export const usersService = {
   async getBarbers(): Promise<any[]> {
     const response = await api.get<{ success: boolean; data: any[] }>('/barbers');
     return response.data.data || [];
+  },
+
+  async verifyUserEmail(userId: string): Promise<User> {
+    const response = await api.put<{ success: boolean; data: User; message: string }>(
+      `/users/${userId}/verify-email`
+    );
+    return response.data.data;
   },
 };
 

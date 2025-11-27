@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Users as UsersIcon, Plus, Search, Edit, Trash2, Eye, Filter, X, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { Users as UsersIcon, Plus, Search, Edit, Trash2, Eye, Filter, X, Copy, Check, ChevronDown, ChevronUp, MailCheck, MailX } from 'lucide-react';
 import { usersService, User, CreateUserData, UpdateUserData, UserRole } from '@/lib/users';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -31,12 +31,14 @@ export default function UsersPage() {
   const [totalPages, setTotalPages] = useState(1);
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [showFilters, setShowFilters] = useState(false);
   const [roleFilter, setRoleFilter] = useState<UserRole | 'ALL'>('ALL');
   const [dateFilter, setDateFilter] = useState<'ALL' | 'TODAY' | 'WEEK' | 'MONTH'>('ALL');
   const [userTypeFilter, setUserTypeFilter] = useState<'ALL' | 'BARBER' | 'NORMAL'>('ALL');
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [userBarberMap, setUserBarberMap] = useState<Record<string, boolean>>({});
+  const [verifyingUserId, setVerifyingUserId] = useState<string | null>(null);
 
   const {
     register,
@@ -231,6 +233,22 @@ export default function UsersPage() {
     }
   };
 
+  const handleVerifyEmail = async (userId: string) => {
+    try {
+      setError(null);
+      setSuccessMessage(null);
+      setVerifyingUserId(userId);
+      await usersService.verifyUserEmail(userId);
+      await loadUsers();
+      setSuccessMessage('Email verificado exitosamente');
+      setTimeout(() => setSuccessMessage(null), 3000);
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Error al verificar email');
+    } finally {
+      setVerifyingUserId(null);
+    }
+  };
+
   const getRoleBadgeColor = (role: UserRole) => {
     switch (role) {
       case 'ADMIN':
@@ -272,6 +290,16 @@ export default function UsersPage() {
           <div className="flex items-center">
             <X className="w-5 h-5 mr-2" />
             {error}
+          </div>
+        </div>
+      )}
+
+      {/* Success message */}
+      {successMessage && (
+        <div className="mb-6 bg-green-50 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded-lg shadow-sm">
+          <div className="flex items-center">
+            <Check className="w-5 h-5 mr-2" />
+            {successMessage}
           </div>
         </div>
       )}
@@ -417,6 +445,9 @@ export default function UsersPage() {
                       Rol
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                      Email Verificado
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                       Fecha de Registro
                     </th>
                     <th className="px-6 py-4 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">
@@ -485,11 +516,38 @@ export default function UsersPage() {
                           {user.role}
                         </span>
                       </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {user.emailVerified ? (
+                          <span className="px-2 py-1 inline-flex items-center gap-1 text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            <MailCheck className="w-3 h-3" />
+                            Verificado
+                          </span>
+                        ) : (
+                          <span className="px-2 py-1 inline-flex items-center gap-1 text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                            <MailX className="w-3 h-3" />
+                            No verificado
+                          </span>
+                        )}
+                      </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {new Date(user.createdAt).toLocaleDateString('es-VE')}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <div className="flex items-center justify-end gap-2">
+                          {!user.emailVerified && (
+                            <button
+                              onClick={() => handleVerifyEmail(user.id)}
+                              disabled={verifyingUserId === user.id}
+                              className="p-2 text-green-600 hover:text-green-700 hover:bg-green-100 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+                              title="Verificar email"
+                            >
+                              {verifyingUserId === user.id ? (
+                                <div className="w-5 h-5 border-2 border-green-600 border-t-transparent rounded-full animate-spin"></div>
+                              ) : (
+                                <MailCheck className="w-5 h-5" />
+                              )}
+                            </button>
+                          )}
                           <button
                             onClick={() => handleView(user)}
                             className="p-2 text-indigo-600 hover:text-indigo-700 hover:bg-indigo-100 rounded-lg transition"
@@ -623,6 +681,32 @@ export default function UsersPage() {
                     <p className="text-sm text-gray-900 bg-gray-50 px-3 py-2 rounded-lg">
                       {new Date(selectedUser.createdAt).toLocaleString('es-VE')}
                     </p>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Email Verificado</label>
+                    {selectedUser.emailVerified ? (
+                      <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                        <MailCheck className="w-3 h-3" />
+                        Verificado
+                      </span>
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <span className="inline-flex items-center gap-1 px-3 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">
+                          <MailX className="w-3 h-3" />
+                          No verificado
+                        </span>
+                        <button
+                          onClick={() => {
+                            handleVerifyEmail(selectedUser.id);
+                            setIsModalOpen(false);
+                          }}
+                          disabled={verifyingUserId === selectedUser.id}
+                          className="px-3 py-1 text-xs font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {verifyingUserId === selectedUser.id ? 'Verificando...' : 'Verificar Email'}
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div className="flex justify-end gap-2 pt-4 border-t border-gray-200">
