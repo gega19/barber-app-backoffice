@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://bartop-p.up.railway.app/api',
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://barber-api.corporacionceg.com/api',
   headers: {
     'Content-Type': 'application/json',
   },

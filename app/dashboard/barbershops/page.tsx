@@ -25,7 +25,7 @@ const getImageUrl = (url: string): string => {
     return url;
   }
   // Remover /api de la URL base si existe
-  const baseUrl = (process.env.NEXT_PUBLIC_API_URL || 'https://bartop-p.up.railway.app/api').replace('/api', '');
+  const baseUrl = (process.env.NEXT_PUBLIC_API_URL || 'https://barber-api.corporacionceg.com/api').replace('/api', '');
   return `${baseUrl}${url}`;
 };
 
