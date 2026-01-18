@@ -63,7 +63,7 @@ export const workplacesService = {
       page: page.toString(),
       limit: limit.toString(),
     });
-    
+
     if (search) {
       params.append('search', search);
     }

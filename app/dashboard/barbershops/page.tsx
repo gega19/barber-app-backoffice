@@ -131,6 +131,179 @@ export default function BarbershopsPage() {
     }
   }, [currentPage, searchTerm]);
 
+  const handleSeedRealData = async () => {
+    const realWorkplaces: CreateWorkplaceData[] = [
+      {
+        name: "Gentlemen Suites",
+        address: "Av. Orinoco, Edif. Nalania, Piso 1, Las Mercedes, Caracas",
+        city: "Caracas",
+        latitude: 10.4847,
+        longitude: -66.8625,
+        description: "Exclusiva suite de barbería en Las Mercedes. Cortes de cabello para caballeros y arreglo de barba con atención personalizada en un ambiente elegante.",
+        instagramUrl: "https://www.instagram.com/gentlemensuites/",
+      },
+      {
+        name: "Geronimo Barbiere",
+        address: "C.C. Paseo El Hatillo, Piso 5, La Boyera, Caracas",
+        city: "Caracas",
+        latitude: 10.4412,
+        longitude: -66.8145,
+        description: "Estética masculina con profesionales especializados. Utiliza productos importados y garantiza una atención de primera clase.",
+        instagramUrl: "https://www.instagram.com/geronimobarbiere/",
+      },
+      {
+        name: "Guillotina Barber Club",
+        address: "Calle La Paz, Edif. San José, El Hatillo, Caracas",
+        city: "Caracas",
+        latitude: 10.4225,
+        longitude: -66.8238,
+        description: "Club de barbería con estilo clásico e industrial. Expertos en cortes tradicionales, degradados y cuidado de la barba.",
+        instagramUrl: "https://www.instagram.com/guillotinabarberclub/",
+      },
+      {
+        name: "Hc Barber",
+        address: "Av. Abraham Lincoln, Sabana Grande, Caracas",
+        city: "Caracas",
+        latitude: 10.4912,
+        longitude: -66.8755,
+        description: "Barbería urbana en Sabana Grande. Especialistas en estilos modernos, diseños urbanos y los mejores fades de la ciudad.",
+        instagramUrl: "https://www.instagram.com/hcbarber/",
+      },
+      {
+        name: "Elegant Barber Studio",
+        address: "Calle Zulia, La Vega, Caracas",
+        city: "Caracas",
+        latitude: 10.4735,
+        longitude: -66.9421,
+        description: "Estudio profesional dedicado al arte de la barbería. Ofrece cortes premium, limpieza facial y cuidado integral para el hombre.",
+        instagramUrl: "https://www.instagram.com/elegantbarber/",
+      },
+      {
+        name: "Romanos Barbershop & Spa",
+        address: "C.C. Sambil Chacao, Nivel Autopista, Caracas",
+        city: "Caracas",
+        latitude: 10.4916,
+        longitude: -66.8532,
+        description: "Barbería de alto tráfico en el Sambil. Ofrece servicios rápidos y de calidad con un equipo de barberos expertos en las últimas tendencias.",
+        instagramUrl: "https://www.instagram.com/romanosbarbershop/",
+      },
+      {
+        name: "Valhalla's Barber Shop",
+        address: "Av. José Félix Sosa, Urb. Bello Campo, Caracas",
+        city: "Caracas",
+        latitude: 10.4942,
+        longitude: -66.8505,
+        description: "Inspirada en la temática vikinga, esta barbería ofrece un ambiente rudo y masculino con servicios de cortes de precisión y rituales de barba.",
+        instagramUrl: "https://www.instagram.com/valhallas_barbers/",
+      },
+      {
+        name: "Barber Beer",
+        address: "Calle Urdaneta, Edif. Cabrinis, PB, Local 3, Chacao",
+        city: "Caracas",
+        latitude: 10.4905,
+        longitude: -66.8521,
+        description: "Un concepto que combina la barbería clásica con la degustación de cervezas artesanales. El lugar perfecto para relajarse y mejorar el estilo.",
+        instagramUrl: "https://www.instagram.com/barberbeer/",
+      },
+      {
+        name: "Ares Barber Shop",
+        address: "C.C. Altamira Village, Nivel Lobby, Altamira, Caracas",
+        city: "Caracas",
+        latitude: 10.4981,
+        longitude: -66.8485,
+        description: "Localizado en el prestigioso Altamira Village, Ares ofrece servicios de barbería de lujo y tratamientos de cuidado facial para caballeros.",
+        instagramUrl: "https://www.instagram.com/aresbarbershop/",
+      },
+      {
+        name: "Thetiger barber",
+        address: "Av. Transversal 5, Altamira Village, Nivel Lobby, Caracas",
+        city: "Caracas",
+        latitude: 10.4982,
+        longitude: -66.8486,
+        description: "Barbería creativa con enfoque en diseños personalizados y cortes artísticos en el corazón de Altamira.",
+        instagramUrl: "https://www.instagram.com/thetigh_barber/",
+      },
+      {
+        name: "Cuts Barber Shop (El Recreo)",
+        address: "C.C. El Recreo, Local C3-36B, Caracas",
+        city: "Caracas",
+        latitude: 10.4895,
+        longitude: -66.8778,
+        description: "Barbería moderna ubicada en el Centro Comercial El Recreo, ideal para un corte rápido y de calidad mientras haces tus compras.",
+        instagramUrl: "https://www.instagram.com/cutsbarbershop.ve/",
+      },
+      {
+        name: "Barbería New York (Aloa)",
+        address: "C.C. Aloa, Nivel PP, Local 32, Horizonte, Caracas",
+        city: "Caracas",
+        latitude: 10.4952,
+        longitude: -66.8221,
+        description: "Tradición y estilo neoyorquino en Caracas. Servicios de afeitado con toalla caliente y cortes clásicos.",
+        instagramUrl: "https://www.instagram.com/barberianewyork/",
+      },
+      {
+        name: "Elite Barbería (La Candelaria)",
+        address: "Urb. La Candelaria, Caracas",
+        city: "Caracas",
+        latitude: 10.5065,
+        longitude: -66.9032,
+        description: "Barbería de alta calidad en La Candelaria. Conocida por su atención al detalle y ambiente acogedor.",
+        instagramUrl: "https://www.instagram.com/elitebarberia/",
+      },
+      {
+        name: "Barbería Funchal",
+        address: "Av. Casanova, Res. El Recreo, Caracas",
+        city: "Caracas",
+        latitude: 10.4902,
+        longitude: -66.8785,
+        description: "Con historia desde 1962, la Barbería Funchal es un ícono de la tradición barberil en Caracas.",
+        instagramUrl: "https://www.instagram.com/barberiafunchal/",
+      },
+      {
+        name: "Caracas Barber Shop & Spa",
+        address: "Las Mercedes, Av. Principal, Caracas",
+        city: "Caracas",
+        latitude: 10.4835,
+        longitude: -66.8612,
+        description: "Un oasis de cuidado personal para el hombre que combina barbería con servicios de spa y masajes relajantes.",
+        instagramUrl: "https://www.instagram.com/ccsbarbershop/",
+      }
+    ];
+
+    if (!window.confirm(`¿Estás seguro de que quieres cargar ${realWorkplaces.length} barberías reales? Se crearán una por una.`)) {
+      return;
+    }
+
+    setIsLoading(true);
+    let successCount = 0;
+    let errorCount = 0;
+
+    try {
+      for (const wp of realWorkplaces) {
+        try {
+          await workplacesService.createWorkplace(wp);
+          successCount++;
+        } catch (err: any) {
+          console.error(`Error creando ${wp.name}:`, err);
+          // Si ya existe (409), lo contamos como "procesado" o simplemente ignoramos el error específico
+          if (err.response?.status === 409) {
+            successCount++;
+          } else {
+            errorCount++;
+          }
+        }
+      }
+
+      setError(null);
+      await loadWorkplaces();
+      alert(`Proceso completado.\nÉxito: ${successCount}\nErrores: ${errorCount}`);
+    } catch (err: any) {
+      setError('Error general durante el proceso de carga');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
     loadWorkplaces();
   }, [loadWorkplaces]);
@@ -248,7 +421,7 @@ export default function BarbershopsPage() {
 
   const handleMediaUpload = async () => {
     if (selectedFiles.length === 0) return;
-    
+
     const workplace = mediaWorkplace || selectedWorkplace;
     if (!workplace) return;
 
@@ -319,7 +492,7 @@ export default function BarbershopsPage() {
         };
         await workplacesService.createWorkplace(createData);
       }
-      
+
       setIsModalOpen(false);
       reset();
       loadWorkplaces();
@@ -354,13 +527,23 @@ export default function BarbershopsPage() {
           </h1>
           <p className="text-gray-600 text-lg">Gestiona todas las barberías y lugares de trabajo</p>
         </div>
-        <button
-          onClick={handleCreate}
-          className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl hover:from-indigo-700 hover:to-indigo-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-        >
-          <Plus className="w-5 h-5" />
-          Nueva Barbería
-        </button>
+        <div className="flex gap-3">
+          <button
+            onClick={handleSeedRealData}
+            disabled={isLoading}
+            className="flex items-center gap-2 bg-white border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-xl hover:bg-indigo-50 transition-all shadow-md active:scale-95 disabled:opacity-50"
+          >
+            <Upload className="w-5 h-5" />
+            Cargar Datos Reales
+          </button>
+          <button
+            onClick={handleCreate}
+            className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl hover:from-indigo-700 hover:to-indigo-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          >
+            <Plus className="w-5 h-5" />
+            Nueva Barbería
+          </button>
+        </div>
       </div>
 
       {/* Error message */}
@@ -667,7 +850,7 @@ export default function BarbershopsPage() {
                 {selectedWorkplace.banner && (
                   <div className="rounded-lg overflow-hidden border border-gray-200">
                     <img
-                        src={getImageUrl(selectedWorkplace.banner)}
+                      src={getImageUrl(selectedWorkplace.banner)}
                       alt="Banner"
                       className="w-full h-48 object-cover"
                       onError={(e) => {
@@ -955,7 +1138,7 @@ export default function BarbershopsPage() {
                       {watchedImage && (
                         <div className="rounded-lg overflow-hidden border border-gray-200 max-w-xs">
                           <img
-                                src={getImageUrl(watchedImage)}
+                            src={getImageUrl(watchedImage)}
                             alt="Preview"
                             className="w-full h-32 object-cover"
                             onError={(e) => {
@@ -1005,7 +1188,7 @@ export default function BarbershopsPage() {
                       {watchedBanner && (
                         <div className="rounded-lg overflow-hidden border border-gray-200">
                           <img
-                                src={getImageUrl(watchedBanner)}
+                            src={getImageUrl(watchedBanner)}
                             alt="Banner Preview"
                             className="w-full h-48 object-cover"
                             onError={(e) => {
