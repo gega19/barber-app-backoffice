@@ -14,7 +14,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barbe
 ;
 ;
 const api = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].create({
-    baseURL: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_URL || 'https://barber-app-backend-kj6s.onrender.com/api',
+    baseURL: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_URL || 'https://barber-api.corporacionceg.com/api',
     headers: {
         'Content-Type': 'application/json'
     }
@@ -37,6 +37,10 @@ api.interceptors.request.use((config)=>{
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }
+    // No sobrescribir Content-Type si es FormData (el browser lo establece automáticamente)
+    if (config.data instanceof FormData) {
+        delete config.headers['Content-Type'];
+    }
     return config;
 });
 // Interceptor para manejar errores
@@ -45,7 +49,9 @@ api.interceptors.response.use((response)=>response, (error)=>{
         // Token expirado o inválido
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$js$2d$cookie$2f$dist$2f$js$2e$cookie$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].remove('token');
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$js$2d$cookie$2f$dist$2f$js$2e$cookie$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].remove('refreshToken');
-        if ("TURBOPACK compile-time truthy", 1) {
+        // Solo redirigir si NO estamos ya en la página de login
+        // Esto evita que se limpie el error cuando hay credenciales incorrectas
+        if (("TURBOPACK compile-time value", "object") !== 'undefined' && !window.location.pathname.includes('/login')) {
             window.location.href = '/login';
         }
     }
@@ -70,7 +76,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barbe
 // Roles permitidos para acceder al backoffice
 const ALLOWED_BACKOFFICE_ROLES = [
     'ADMIN',
-    'CLIENT'
+    'CLIENT',
+    'BARBERSHOP'
 ];
 const authService = {
     async login (credentials) {
@@ -155,7 +162,8 @@ const authService = {
             if ([
                 'ADMIN',
                 'CLIENT',
-                'USER'
+                'USER',
+                'BARBERSHOP'
             ].includes(normalizedRole)) {
                 return normalizedRole;
             }

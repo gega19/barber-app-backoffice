@@ -6,7 +6,7 @@ export interface LoginCredentials {
   password: string;
 }
 
-export type UserRole = 'ADMIN' | 'CLIENT' | 'USER';
+export type UserRole = 'ADMIN' | 'CLIENT' | 'USER' | 'BARBERSHOP';
 
 export interface AuthResponse {
   user: {
@@ -20,30 +20,30 @@ export interface AuthResponse {
 }
 
 // Roles permitidos para acceder al backoffice
-const ALLOWED_BACKOFFICE_ROLES: UserRole[] = ['ADMIN', 'CLIENT'];
+const ALLOWED_BACKOFFICE_ROLES: UserRole[] = ['ADMIN', 'CLIENT', 'BARBERSHOP'];
 
 export const authService = {
   async login(credentials: LoginCredentials): Promise<AuthResponse> {
     try {
       const response = await api.post<{ success: boolean; data: AuthResponse }>('/auth/login', credentials);
-      
+
       if (response.data.success && response.data.data) {
         const data = response.data.data;
-        
+
         // El backend devuelve accessToken, no token - mapear correctamente
         const token = (data as any).accessToken || data.token;
         const refreshToken = data.refreshToken;
         const user = data.user;
-        
+
         // Validar que todos los campos necesarios estén presentes
         if (!token || !refreshToken || !user) {
           throw new Error('Respuesta del servidor incompleta. Faltan datos de autenticación.');
         }
-        
+
         // Guardar tokens en cookies
         Cookies.set('token', token, { expires: 7 }); // 7 días
         Cookies.set('refreshToken', refreshToken, { expires: 7 });
-        
+
         // Retornar con la estructura correcta
         return {
           token,
@@ -51,7 +51,7 @@ export const authService = {
           user,
         };
       }
-      
+
       throw new Error('Login failed: respuesta del servidor inválida');
     } catch (error: any) {
       if (error.response) {
@@ -86,7 +86,7 @@ export const authService = {
       // Intentar obtener el role del token si está disponible
       const token = Cookies.get('token');
       if (!token) return false;
-      
+
       try {
         // Decodificar el token para obtener el role
         const payload = JSON.parse(atob(token.split('.')[1]));
@@ -95,12 +95,12 @@ export const authService = {
         return false;
       }
     }
-    
+
     // Normalizar el role a mayúsculas para comparación
     const normalizedRole = role.toUpperCase() as UserRole;
-    
+
     // Verificar que el role esté en la lista de roles permitidos
-    return ALLOWED_BACKOFFICE_ROLES.some(allowedRole => 
+    return ALLOWED_BACKOFFICE_ROLES.some(allowedRole =>
       allowedRole.toUpperCase() === normalizedRole
     );
   },
@@ -108,18 +108,18 @@ export const authService = {
   getCurrentRole(): UserRole | null {
     const token = Cookies.get('token');
     if (!token) return null;
-    
+
     try {
       const payload = JSON.parse(atob(token.split('.')[1]));
       const role = payload.role as string;
       if (!role) return null;
-      
+
       // Normalizar a mayúsculas y validar que sea un role válido
       const normalizedRole = role.toUpperCase();
-      if (['ADMIN', 'CLIENT', 'USER'].includes(normalizedRole)) {
+      if (['ADMIN', 'CLIENT', 'USER', 'BARBERSHOP'].includes(normalizedRole)) {
         return normalizedRole as UserRole;
       }
-      
+
       return null;
     } catch {
       return null;

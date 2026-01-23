@@ -77,6 +77,11 @@ export const workplacesService = {
     return response.data.data;
   },
 
+  async getMyWorkplace(): Promise<Workplace> {
+    const response = await api.get<{ success: boolean; data: Workplace }>('/my-workplace');
+    return response.data.data;
+  },
+
   async createWorkplace(data: CreateWorkplaceData): Promise<Workplace> {
     const response = await api.post<{ success: boolean; data: Workplace }>('/workplaces', data);
     return response.data.data;

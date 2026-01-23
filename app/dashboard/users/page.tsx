@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Users as UsersIcon, Plus, Search, Edit, Trash2, Eye, Filter, X, Copy, Check, ChevronDown, ChevronUp, MailCheck, MailX } from 'lucide-react';
 import { usersService, User, CreateUserData, UpdateUserData, UserRole } from '@/lib/users';
-import { useForm } from 'react-hook-form';
+import { workplacesService, Workplace } from '@/lib/workplaces';
+import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
@@ -13,7 +14,8 @@ const userSchema = z.object({
   name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
   phone: z.string().optional(),
   location: z.string().optional(),
-  role: z.enum(['ADMIN', 'CLIENT', 'USER']),
+  role: z.enum(['ADMIN', 'CLIENT', 'USER', 'BARBERSHOP']),
+  workplaceId: z.string().optional(),
   country: z.string().optional(),
   gender: z.string().optional(),
 });
@@ -39,6 +41,7 @@ export default function UsersPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [userBarberMap, setUserBarberMap] = useState<Record<string, boolean>>({});
   const [verifyingUserId, setVerifyingUserId] = useState<string | null>(null);
+  const [workplaces, setWorkplaces] = useState<Workplace[]>([]);
 
   const {
     register,
@@ -46,6 +49,7 @@ export default function UsersPage() {
     formState: { errors },
     reset,
     setValue,
+    control,
   } = useForm<UserFormData>({
     resolver: zodResolver(userSchema),
     defaultValues: {
@@ -53,26 +57,28 @@ export default function UsersPage() {
     },
   });
 
-  const loadUsers = useCallback(async () => {
+  const fetchUsers = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await usersService.getUsers(currentPage, 10, searchTerm || undefined);
+      const response = await usersService.getUsers(currentPage, 10, searchTerm);
       let filteredUsers = response.data;
-      
-      // Load barbers to check user types
-      const barbersResponse = await usersService.getBarbers();
-      const barberEmails = new Set(barbersResponse.map((b: any) => b.email));
+
+      // Fetch associated barber profiles for these users
       const barberMap: Record<string, boolean> = {};
-      filteredUsers.forEach((user: User) => {
-        barberMap[user.id] = barberEmails.has(user.email);
+
+      // Optimization: we could add an endpoint to check this in bulk, 
+      // but for now we'll do it as we fetch users if needed.
+      // Actually, the backend now returns if isBarber
+      response.data.forEach((u: any) => {
+        barberMap[u.id] = u.role === 'BARBER' || !!u.isBarber;
       });
       setUserBarberMap(barberMap);
-      
+
       // Apply role filter
       if (roleFilter !== 'ALL') {
         filteredUsers = filteredUsers.filter(user => user.role === roleFilter);
       }
-      
+
       // Apply user type filter (barber vs normal)
       if (userTypeFilter !== 'ALL') {
         filteredUsers = filteredUsers.filter(user => {
@@ -80,12 +86,12 @@ export default function UsersPage() {
           return userTypeFilter === 'BARBER' ? isBarber : !isBarber;
         });
       }
-      
+
       // Apply date filter
       if (dateFilter !== 'ALL') {
         const now = new Date();
         const filterDate = new Date();
-        
+
         switch (dateFilter) {
           case 'TODAY':
             filterDate.setHours(0, 0, 0, 0);
@@ -97,13 +103,13 @@ export default function UsersPage() {
             filterDate.setMonth(now.getMonth() - 1);
             break;
         }
-        
+
         filteredUsers = filteredUsers.filter(user => {
           const userDate = new Date(user.createdAt);
           return userDate >= filterDate;
         });
       }
-      
+
       setUsers(filteredUsers);
       // Recalculate total pages based on filtered results
       const totalFiltered = filteredUsers.length;
@@ -115,9 +121,24 @@ export default function UsersPage() {
     }
   }, [currentPage, searchTerm, roleFilter, dateFilter, userTypeFilter]);
 
+  const fetchWorkplaces = useCallback(async () => {
+    try {
+      const response = await workplacesService.getWorkplaces(1, 100);
+      setWorkplaces(response.data);
+    } catch (error) {
+      console.error('Error fetching workplaces:', error);
+    }
+  }, []);
+
   useEffect(() => {
-    loadUsers();
-  }, [loadUsers]);
+    fetchUsers();
+    fetchWorkplaces();
+  }, [fetchUsers, fetchWorkplaces]);
+
+  const selectedRole = useWatch({
+    control,
+    name: 'role',
+  });
 
   const copyToClipboard = async (text: string, id: string) => {
     try {
@@ -167,6 +188,7 @@ export default function UsersPage() {
     setValue('phone', user.phone || '');
     setValue('location', user.location || '');
     setValue('role', user.role);
+    setValue('workplaceId', user.workplaceId || '');
     setValue('country', user.country || '');
     setValue('gender', user.gender || '');
     setIsModalOpen(true);
@@ -191,10 +213,11 @@ export default function UsersPage() {
           phone: data.phone || undefined,
           location: data.location || undefined,
           role: data.role,
+          workplaceId: data.role === 'BARBERSHOP' ? data.workplaceId : undefined,
           country: data.country || undefined,
           gender: data.gender || undefined,
         };
-        
+
         if (data.password) {
           updateData.password = data.password;
         }
@@ -208,15 +231,16 @@ export default function UsersPage() {
           phone: data.phone || undefined,
           location: data.location || undefined,
           role: data.role,
+          workplaceId: data.role === 'BARBERSHOP' ? data.workplaceId : undefined,
           country: data.country || undefined,
           gender: data.gender || undefined,
         };
         await usersService.createUser(createData);
       }
-      
+
       setIsModalOpen(false);
       reset();
-      loadUsers();
+      fetchUsers();
     } catch (err: any) {
       setError(err.response?.data?.message || 'Error al guardar usuario');
     }
@@ -227,7 +251,7 @@ export default function UsersPage() {
       setError(null);
       await usersService.deleteUser(id);
       setDeleteConfirm(null);
-      loadUsers();
+      fetchUsers();
     } catch (err: any) {
       setError(err.response?.data?.message || 'Error al eliminar usuario');
     }
@@ -239,7 +263,7 @@ export default function UsersPage() {
       setSuccessMessage(null);
       setVerifyingUserId(userId);
       await usersService.verifyUserEmail(userId);
-      await loadUsers();
+      await fetchUsers();
       setSuccessMessage('Email verificado exitosamente');
       setTimeout(() => setSuccessMessage(null), 3000);
     } catch (err: any) {
@@ -796,9 +820,32 @@ export default function UsersPage() {
                     >
                       <option value="USER">Usuario</option>
                       <option value="CLIENT">Cliente</option>
+                      <option value="BARBERSHOP">Barbería (Manager)</option>
                       <option value="ADMIN">Administrador</option>
                     </select>
                   </div>
+
+                  {selectedRole === 'BARBERSHOP' && (
+                    <div className="col-span-full">
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Vincular a Barbería <span className="text-red-500">*</span>
+                      </label>
+                      <select
+                        {...register('workplaceId')}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+                      >
+                        <option value="">Seleccionar barbería...</option>
+                        {workplaces.map((wp) => (
+                          <option key={wp.id} value={wp.id}>
+                            {wp.name} - {wp.city}
+                          </option>
+                        ))}
+                      </select>
+                      {errors.workplaceId && (
+                        <p className="mt-1 text-sm text-red-600">Debe seleccionar una barbería</p>
+                      )}
+                    </div>
+                  )}
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Ubicación</label>

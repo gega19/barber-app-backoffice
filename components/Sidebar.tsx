@@ -1,10 +1,10 @@
 'use client';
 
 import { useRouter, usePathname } from 'next/navigation';
-import { 
-  LayoutDashboard, 
-  Users, 
-  Scissors, 
+import {
+  LayoutDashboard,
+  Users,
+  Scissors,
   Calendar,
   Tag,
   Settings,
@@ -22,7 +22,7 @@ import {
   FileText,
   BarChart3
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { authService } from '@/lib/auth';
 
 interface NavSubItem {
@@ -38,7 +38,7 @@ interface NavItem {
   subItems?: NavSubItem[];
 }
 
-const navigation: NavItem[] = [
+const adminNavigation: NavItem[] = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
   { name: 'Analytics', href: '/dashboard/analytics', icon: BarChart3 },
   { name: 'Usuarios', href: '/dashboard/users', icon: Users },
@@ -49,15 +49,15 @@ const navigation: NavItem[] = [
   { name: 'Campañas', href: '/dashboard/campaigns', icon: Send },
   { name: 'Versiones APK', href: '/dashboard/app-versions', icon: Smartphone },
   { name: 'Documentos Legales', href: '/dashboard/legal-documents', icon: FileText },
-  { 
-    name: 'General', 
+  {
+    name: 'General',
     icon: FolderOpen,
     subItems: [
       { name: 'Métodos de Pago', href: '/dashboard/general/payment-methods', icon: CreditCard },
     ]
   },
-  { 
-    name: 'Pago', 
+  {
+    name: 'Pago',
     icon: CreditCard,
     subItems: [
       { name: 'Verificar Pagos', href: '/dashboard/payment/verification', icon: ShieldCheck },
@@ -66,11 +66,37 @@ const navigation: NavItem[] = [
   { name: 'Configuración', href: '/dashboard/settings', icon: Settings },
 ];
 
+const barbershopNavigation: NavItem[] = [
+  { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
+  { name: 'Mi Barbería', href: '/dashboard/my-barbershop', icon: Scissors },
+  { name: 'Mis Barberos', href: '/dashboard/my-barbershop/barbers', icon: Users },
+  { name: 'Mis Clientes', href: '/dashboard/my-workplace/clients', icon: ShieldCheck },
+  { name: 'Citas', href: '/dashboard/appointments', icon: Calendar },
+  { name: 'Promociones', href: '/dashboard/promotions', icon: Tag },
+  { name: 'Estadísticas', href: '/dashboard/my-workplace/stats', icon: BarChart3 },
+  { name: 'Configuración', href: '/dashboard/settings', icon: Settings },
+];
+
 export default function Sidebar() {
   const router = useRouter();
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+  const [userRole, setUserRole] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const user = await authService.getCurrentUser();
+        setUserRole(user?.role || 'USER');
+      } catch (error) {
+        console.error('Error fetching user for sidebar:', error);
+      }
+    };
+    fetchUser();
+  }, []);
+
+  const navigation = userRole === 'ADMIN' ? adminNavigation : barbershopNavigation;
+
   // Auto-expand items that contain the current path
   const getInitialExpandedItems = (): string[] => {
     const expanded: string[] = [];
@@ -84,7 +110,7 @@ export default function Sidebar() {
     });
     return expanded;
   };
-  
+
   const [expandedItems, setExpandedItems] = useState<string[]>(getInitialExpandedItems());
 
   const handleLogout = () => {
@@ -93,8 +119,8 @@ export default function Sidebar() {
   };
 
   const toggleExpanded = (itemName: string) => {
-    setExpandedItems(prev => 
-      prev.includes(itemName) 
+    setExpandedItems(prev =>
+      prev.includes(itemName)
         ? prev.filter(name => name !== itemName)
         : [...prev, itemName]
     );
@@ -143,9 +169,9 @@ export default function Sidebar() {
           {/* Logo */}
           <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
             <div className="flex items-center gap-3">
-              <img 
-                src="/logo.png" 
-                alt="bartop" 
+              <img
+                src="/logo.png"
+                alt="bartop"
                 className="w-10 h-10 rounded-lg object-cover"
                 onError={(e) => {
                   // Fallback si el logo no se carga
@@ -188,7 +214,7 @@ export default function Sidebar() {
               const isActive = isItemActive(item);
               const isExpanded = expandedItems.includes(item.name);
               const hasSubItems = item.subItems && item.subItems.length > 0;
-              
+
               return (
                 <div key={item.name}>
                   <button
@@ -203,10 +229,9 @@ export default function Sidebar() {
                     className={`
                       w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg
                       transition-colors
-                      ${
-                        isActive
-                          ? 'bg-indigo-50 text-indigo-700 font-medium'
-                          : 'text-gray-700 hover:bg-gray-50'
+                      ${isActive
+                        ? 'bg-indigo-50 text-indigo-700 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
                       }
                     `}
                   >
@@ -222,13 +247,13 @@ export default function Sidebar() {
                       )
                     )}
                   </button>
-                  
+
                   {hasSubItems && isExpanded && (
                     <div className="ml-4 mt-1 space-y-1">
                       {item.subItems!.map((subItem) => {
                         const SubIcon = subItem.icon;
                         const isSubActive = isSubItemActive(subItem);
-                        
+
                         return (
                           <button
                             key={subItem.name}
@@ -239,10 +264,9 @@ export default function Sidebar() {
                             className={`
                               w-full flex items-center gap-3 px-4 py-2 rounded-lg
                               transition-colors text-sm
-                              ${
-                                isSubActive
-                                  ? 'bg-indigo-50 text-indigo-700 font-medium'
-                                  : 'text-gray-600 hover:bg-gray-50'
+                              ${isSubActive
+                                ? 'bg-indigo-50 text-indigo-700 font-medium'
+                                : 'text-gray-600 hover:bg-gray-50'
                               }
                             `}
                           >

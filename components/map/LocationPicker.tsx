@@ -5,7 +5,7 @@ import { MapPin, Navigation, X } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 // Importar todo el mapa dinámicamente para evitar problemas de SSR
-const MapComponent = dynamic(() => import('./MapComponent'), { 
+const MapComponent = dynamic(() => import('./MapComponent'), {
   ssr: false,
   loading: () => (
     <div className="flex items-center justify-center h-full bg-gray-100">
@@ -23,7 +23,6 @@ interface LocationPickerProps {
 
 
 export default function LocationPicker({ latitude, longitude, onLocationChange, onClear }: LocationPickerProps) {
-  const [mapKey, setMapKey] = useState(0);
   const [currentPosition, setCurrentPosition] = useState<{ lat: number; lng: number } | null>(
     latitude && longitude ? { lat: latitude, lng: longitude } : null
   );
@@ -37,7 +36,6 @@ export default function LocationPicker({ latitude, longitude, onLocationChange, 
   useEffect(() => {
     if (latitude && longitude) {
       setCurrentPosition({ lat: latitude, lng: longitude });
-      setMapKey((prev) => prev + 1); // Forzar re-render del mapa
     }
   }, [latitude, longitude]);
 
@@ -101,7 +99,6 @@ export default function LocationPicker({ latitude, longitude, onLocationChange, 
 
       <div className="border-2 border-gray-300 rounded-lg overflow-hidden" style={{ height: '400px' }}>
         <MapComponent
-          key={mapKey}
           center={center}
           zoom={currentPosition ? 15 : 12}
           currentPosition={currentPosition}
@@ -127,7 +124,6 @@ export default function LocationPicker({ latitude, longitude, onLocationChange, 
                   const newLng = currentPosition?.lng || (longitude || defaultCenter[1]);
                   const newPosition = { lat, lng: newLng };
                   setCurrentPosition(newPosition);
-                  setMapKey((prev) => prev + 1); // Forzar re-render del mapa
                   onLocationChange(lat, newLng);
                 } else if (e.target.value === '') {
                   // Si se borra la latitud, mantener la longitud si existe
@@ -162,7 +158,6 @@ export default function LocationPicker({ latitude, longitude, onLocationChange, 
                   const newLat = currentPosition?.lat || (latitude || defaultCenter[0]);
                   const newPosition = { lat: newLat, lng };
                   setCurrentPosition(newPosition);
-                  setMapKey((prev) => prev + 1); // Forzar re-render del mapa
                   onLocationChange(newLat, lng);
                 } else if (e.target.value === '') {
                   // Si se borra la longitud, mantener la latitud si existe

@@ -1,10 +1,13 @@
 {
   "/dashboard/appointments/page": "app/dashboard/appointments/page.js",
   "/dashboard/barbershops/page": "app/dashboard/barbershops/page.js",
-  "/dashboard/general/payment-methods/page": "app/dashboard/general/payment-methods/page.js",
+  "/dashboard/my-barbershop/barbers/page": "app/dashboard/my-barbershop/barbers/page.js",
+  "/dashboard/my-barbershop/page": "app/dashboard/my-barbershop/page.js",
+  "/dashboard/my-workplace/clients/page": "app/dashboard/my-workplace/clients/page.js",
+  "/dashboard/my-workplace/stats/page": "app/dashboard/my-workplace/stats/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/payment/verification/page": "app/dashboard/payment/verification/page.js",
   "/dashboard/promotions/page": "app/dashboard/promotions/page.js",
-  "/dashboard/specialties/page": "app/dashboard/specialties/page.js",
-  "/dashboard/users/page": "app/dashboard/users/page.js"
+  "/dashboard/users/page": "app/dashboard/users/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js"
 }

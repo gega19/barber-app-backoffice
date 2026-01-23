@@ -77,7 +77,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barbe
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$js$2d$cookie$2f$dist$2f$js$2e$cookie$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/projects/barber-application/barber-app-backoffice/node_modules/js-cookie/dist/js.cookie.mjs [app-client] (ecmascript)");
 ;
 ;
-const baseURL = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
+const baseURL = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_URL || 'https://barber-api.corporacionceg.com/api';
 const uploadService = {
     async uploadFile (file) {
         const formData = new FormData();
@@ -136,6 +136,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barbe
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/projects/barber-application/barber-app-backoffice/node_modules/react-hook-form/dist/index.esm.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f40$hookform$2f$resolvers$2f$zod$2f$dist$2f$zod$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/projects/barber-application/barber-app-backoffice/node_modules/@hookform/resolvers/zod/dist/zod.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__ = __turbopack_context__.i("[project]/Desktop/projects/barber-application/barber-app-backoffice/node_modules/zod/v4/classic/external.js [app-client] (ecmascript) <export * as z>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/projects/barber-application/barber-app-backoffice/node_modules/next/dist/shared/lib/app-dynamic.js [app-client] (ecmascript)");
+;
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -146,22 +148,62 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
+// Importar LocationPicker dinámicamente para evitar problemas con Turbopack
+const LocationPicker = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$shared$2f$lib$2f$app$2d$dynamic$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(()=>__turbopack_context__.A("[project]/Desktop/projects/barber-application/barber-app-backoffice/components/map/LocationPicker.tsx [app-client] (ecmascript, next/dynamic entry, async loader)"), {
+    loadableGenerated: {
+        modules: [
+            "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/map/LocationPicker.tsx [app-client] (ecmascript, next/dynamic entry)"
+        ]
+    },
+    ssr: false,
+    loading: ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "flex items-center justify-center h-96 bg-gray-100 rounded-lg",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-gray-500",
+                children: "Cargando selector de ubicación..."
+            }, void 0, false, {
+                fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                lineNumber: 17,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0))
+        }, void 0, false, {
+            fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+            lineNumber: 16,
+            columnNumber: 5
+        }, ("TURBOPACK compile-time value", void 0))
+});
+_c = LocationPicker;
 // Helper para construir URLs de imágenes (sin /api)
 const getImageUrl = (url)=>{
     if (url.startsWith('http')) {
         return url;
     }
     // Remover /api de la URL base si existe
-    const baseUrl = (__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api').replace('/api', '');
+    const baseUrl = (__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_URL || 'https://barber-api.corporacionceg.com/api').replace('/api', '');
     return `${baseUrl}${url}`;
+};
+// Helper para truncar texto a un máximo de caracteres
+const truncateText = (text, maxLength = 50)=>{
+    if (!text) return '-';
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + '...';
 };
 const workplaceSchema = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].object({
     name: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().min(2, 'El nombre debe tener al menos 2 caracteres'),
     address: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional(),
     city: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional(),
+    latitude: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].number().min(-90).max(90).optional().nullable(),
+    longitude: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].number().min(-180).max(180).optional().nullable(),
     description: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional(),
     image: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional(),
-    banner: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional()
+    banner: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional(),
+    instagramUrl: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional().refine((val)=>!val || val.trim() === '' || __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().url().safeParse(val).success, {
+        message: 'Debe ser una URL válida o @usuario'
+    }),
+    tiktokUrl: __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().optional().refine((val)=>!val || val.trim() === '' || __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].string().url().safeParse(val).success, {
+        message: 'Debe ser una URL válida o @usuario'
+    })
 });
 function BarbershopsPage() {
     _s();
@@ -231,6 +273,174 @@ function BarbershopsPage() {
         currentPage,
         searchTerm
     ]);
+    const handleSeedRealData = async ()=>{
+        const realWorkplaces = [
+            {
+                name: "Gentlemen Suites",
+                address: "Av. Orinoco, Edif. Nalania, Piso 1, Las Mercedes, Caracas",
+                city: "Caracas",
+                latitude: 10.4847,
+                longitude: -66.8625,
+                description: "Exclusiva suite de barbería en Las Mercedes. Cortes de cabello para caballeros y arreglo de barba con atención personalizada en un ambiente elegante.",
+                instagramUrl: "https://www.instagram.com/gentlemensuites/"
+            },
+            {
+                name: "Geronimo Barbiere",
+                address: "C.C. Paseo El Hatillo, Piso 5, La Boyera, Caracas",
+                city: "Caracas",
+                latitude: 10.4412,
+                longitude: -66.8145,
+                description: "Estética masculina con profesionales especializados. Utiliza productos importados y garantiza una atención de primera clase.",
+                instagramUrl: "https://www.instagram.com/geronimobarbiere/"
+            },
+            {
+                name: "Guillotina Barber Club",
+                address: "Calle La Paz, Edif. San José, El Hatillo, Caracas",
+                city: "Caracas",
+                latitude: 10.4225,
+                longitude: -66.8238,
+                description: "Club de barbería con estilo clásico e industrial. Expertos en cortes tradicionales, degradados y cuidado de la barba.",
+                instagramUrl: "https://www.instagram.com/guillotinabarberclub/"
+            },
+            {
+                name: "Hc Barber",
+                address: "Av. Abraham Lincoln, Sabana Grande, Caracas",
+                city: "Caracas",
+                latitude: 10.4912,
+                longitude: -66.8755,
+                description: "Barbería urbana en Sabana Grande. Especialistas en estilos modernos, diseños urbanos y los mejores fades de la ciudad.",
+                instagramUrl: "https://www.instagram.com/hcbarber/"
+            },
+            {
+                name: "Elegant Barber Studio",
+                address: "Calle Zulia, La Vega, Caracas",
+                city: "Caracas",
+                latitude: 10.4735,
+                longitude: -66.9421,
+                description: "Estudio profesional dedicado al arte de la barbería. Ofrece cortes premium, limpieza facial y cuidado integral para el hombre.",
+                instagramUrl: "https://www.instagram.com/elegantbarber/"
+            },
+            {
+                name: "Romanos Barbershop & Spa",
+                address: "C.C. Sambil Chacao, Nivel Autopista, Caracas",
+                city: "Caracas",
+                latitude: 10.4916,
+                longitude: -66.8532,
+                description: "Barbería de alto tráfico en el Sambil. Ofrece servicios rápidos y de calidad con un equipo de barberos expertos en las últimas tendencias.",
+                instagramUrl: "https://www.instagram.com/romanosbarbershop/"
+            },
+            {
+                name: "Valhalla's Barber Shop",
+                address: "Av. José Félix Sosa, Urb. Bello Campo, Caracas",
+                city: "Caracas",
+                latitude: 10.4942,
+                longitude: -66.8505,
+                description: "Inspirada en la temática vikinga, esta barbería ofrece un ambiente rudo y masculino con servicios de cortes de precisión y rituales de barba.",
+                instagramUrl: "https://www.instagram.com/valhallas_barbers/"
+            },
+            {
+                name: "Barber Beer",
+                address: "Calle Urdaneta, Edif. Cabrinis, PB, Local 3, Chacao",
+                city: "Caracas",
+                latitude: 10.4905,
+                longitude: -66.8521,
+                description: "Un concepto que combina la barbería clásica con la degustación de cervezas artesanales. El lugar perfecto para relajarse y mejorar el estilo.",
+                instagramUrl: "https://www.instagram.com/barberbeer/"
+            },
+            {
+                name: "Ares Barber Shop",
+                address: "C.C. Altamira Village, Nivel Lobby, Altamira, Caracas",
+                city: "Caracas",
+                latitude: 10.4981,
+                longitude: -66.8485,
+                description: "Localizado en el prestigioso Altamira Village, Ares ofrece servicios de barbería de lujo y tratamientos de cuidado facial para caballeros.",
+                instagramUrl: "https://www.instagram.com/aresbarbershop/"
+            },
+            {
+                name: "Thetiger barber",
+                address: "Av. Transversal 5, Altamira Village, Nivel Lobby, Caracas",
+                city: "Caracas",
+                latitude: 10.4982,
+                longitude: -66.8486,
+                description: "Barbería creativa con enfoque en diseños personalizados y cortes artísticos en el corazón de Altamira.",
+                instagramUrl: "https://www.instagram.com/thetigh_barber/"
+            },
+            {
+                name: "Cuts Barber Shop (El Recreo)",
+                address: "C.C. El Recreo, Local C3-36B, Caracas",
+                city: "Caracas",
+                latitude: 10.4895,
+                longitude: -66.8778,
+                description: "Barbería moderna ubicada en el Centro Comercial El Recreo, ideal para un corte rápido y de calidad mientras haces tus compras.",
+                instagramUrl: "https://www.instagram.com/cutsbarbershop.ve/"
+            },
+            {
+                name: "Barbería New York (Aloa)",
+                address: "C.C. Aloa, Nivel PP, Local 32, Horizonte, Caracas",
+                city: "Caracas",
+                latitude: 10.4952,
+                longitude: -66.8221,
+                description: "Tradición y estilo neoyorquino en Caracas. Servicios de afeitado con toalla caliente y cortes clásicos.",
+                instagramUrl: "https://www.instagram.com/barberianewyork/"
+            },
+            {
+                name: "Elite Barbería (La Candelaria)",
+                address: "Urb. La Candelaria, Caracas",
+                city: "Caracas",
+                latitude: 10.5065,
+                longitude: -66.9032,
+                description: "Barbería de alta calidad en La Candelaria. Conocida por su atención al detalle y ambiente acogedor.",
+                instagramUrl: "https://www.instagram.com/elitebarberia/"
+            },
+            {
+                name: "Barbería Funchal",
+                address: "Av. Casanova, Res. El Recreo, Caracas",
+                city: "Caracas",
+                latitude: 10.4902,
+                longitude: -66.8785,
+                description: "Con historia desde 1962, la Barbería Funchal es un ícono de la tradición barberil en Caracas.",
+                instagramUrl: "https://www.instagram.com/barberiafunchal/"
+            },
+            {
+                name: "Caracas Barber Shop & Spa",
+                address: "Las Mercedes, Av. Principal, Caracas",
+                city: "Caracas",
+                latitude: 10.4835,
+                longitude: -66.8612,
+                description: "Un oasis de cuidado personal para el hombre que combina barbería con servicios de spa y masajes relajantes.",
+                instagramUrl: "https://www.instagram.com/ccsbarbershop/"
+            }
+        ];
+        if (!window.confirm(`¿Estás seguro de que quieres cargar ${realWorkplaces.length} barberías reales? Se crearán una por una.`)) {
+            return;
+        }
+        setIsLoading(true);
+        let successCount = 0;
+        let errorCount = 0;
+        try {
+            for (const wp of realWorkplaces){
+                try {
+                    await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$lib$2f$workplaces$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["workplacesService"].createWorkplace(wp);
+                    successCount++;
+                } catch (err) {
+                    console.error(`Error creando ${wp.name}:`, err);
+                    // Si ya existe (409), lo contamos como "procesado" o simplemente ignoramos el error específico
+                    if (err.response?.status === 409) {
+                        successCount++;
+                    } else {
+                        errorCount++;
+                    }
+                }
+            }
+            setError(null);
+            await loadWorkplaces();
+            alert(`Proceso completado.\nÉxito: ${successCount}\nErrores: ${errorCount}`);
+        } catch (err) {
+            setError('Error general durante el proceso de carga');
+        } finally{
+            setIsLoading(false);
+        }
+    };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "BarbershopsPage.useEffect": ()=>{
             loadWorkplaces();
@@ -259,9 +469,13 @@ function BarbershopsPage() {
             name: '',
             address: '',
             city: '',
+            latitude: null,
+            longitude: null,
             description: '',
             image: '',
-            banner: ''
+            banner: '',
+            instagramUrl: '',
+            tiktokUrl: ''
         });
         setIsModalOpen(true);
     };
@@ -271,9 +485,13 @@ function BarbershopsPage() {
         setValue('name', workplace.name);
         setValue('address', workplace.address || '');
         setValue('city', workplace.city || '');
+        setValue('latitude', workplace.latitude ?? null);
+        setValue('longitude', workplace.longitude ?? null);
         setValue('description', workplace.description || '');
         setValue('image', workplace.image || '');
         setValue('banner', workplace.banner || '');
+        setValue('instagramUrl', workplace.instagramUrl || '');
+        setValue('tiktokUrl', workplace.tiktokUrl || '');
         setIsModalOpen(true);
     };
     const handleView = async (workplace)=>{
@@ -374,9 +592,13 @@ function BarbershopsPage() {
                     name: data.name,
                     address: data.address || undefined,
                     city: data.city || undefined,
+                    latitude: data.latitude ?? undefined,
+                    longitude: data.longitude ?? undefined,
                     description: data.description || undefined,
                     image: data.image || undefined,
-                    banner: data.banner || undefined
+                    banner: data.banner || undefined,
+                    instagramUrl: data.instagramUrl && data.instagramUrl.trim() ? data.instagramUrl.trim() : undefined,
+                    tiktokUrl: data.tiktokUrl && data.tiktokUrl.trim() ? data.tiktokUrl.trim() : undefined
                 };
                 await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$lib$2f$workplaces$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["workplacesService"].updateWorkplace(selectedWorkplace.id, updateData);
             } else {
@@ -384,9 +606,13 @@ function BarbershopsPage() {
                     name: data.name,
                     address: data.address || undefined,
                     city: data.city || undefined,
+                    latitude: data.latitude ?? undefined,
+                    longitude: data.longitude ?? undefined,
                     description: data.description || undefined,
                     image: data.image || undefined,
-                    banner: data.banner || undefined
+                    banner: data.banner || undefined,
+                    instagramUrl: data.instagramUrl && data.instagramUrl.trim() ? data.instagramUrl.trim() : undefined,
+                    tiktokUrl: data.tiktokUrl && data.tiktokUrl.trim() ? data.tiktokUrl.trim() : undefined
                 };
                 await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$lib$2f$workplaces$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["workplacesService"].createWorkplace(createData);
             }
@@ -404,7 +630,9 @@ function BarbershopsPage() {
             setDeleteConfirm(null);
             loadWorkplaces();
         } catch (err) {
-            setError(err.response?.data?.message || 'Error al eliminar barbería');
+            const errorMessage = err.response?.data?.message || err.message || 'Error al eliminar barbería';
+            setError(errorMessage);
+            setDeleteConfirm(null); // Cerrar el modal de confirmación para que el usuario vea el error
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -424,19 +652,19 @@ function BarbershopsPage() {
                                             className: "w-8 h-8 text-indigo-600"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 305,
+                                            lineNumber: 524,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                        lineNumber: 304,
+                                        lineNumber: 523,
                                         columnNumber: 13
                                     }, this),
                                     "Barberías"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 303,
+                                lineNumber: 522,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -444,61 +672,121 @@ function BarbershopsPage() {
                                 children: "Gestiona todas las barberías y lugares de trabajo"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 309,
+                                lineNumber: 528,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                        lineNumber: 302,
+                        lineNumber: 521,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        onClick: handleCreate,
-                        className: "flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl hover:from-indigo-700 hover:to-indigo-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex gap-3",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
-                                className: "w-5 h-5"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: handleSeedRealData,
+                                disabled: isLoading,
+                                className: "flex items-center gap-2 bg-white border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-xl hover:bg-indigo-50 transition-all shadow-md active:scale-95 disabled:opacity-50",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$upload$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Upload$3e$__["Upload"], {
+                                        className: "w-5 h-5"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                        lineNumber: 536,
+                                        columnNumber: 13
+                                    }, this),
+                                    "Cargar Datos Reales"
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 315,
+                                lineNumber: 531,
                                 columnNumber: 11
                             }, this),
-                            "Nueva Barbería"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: handleCreate,
+                                className: "flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white px-6 py-3 rounded-xl hover:from-indigo-700 hover:to-indigo-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
+                                        className: "w-5 h-5"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                        lineNumber: 543,
+                                        columnNumber: 13
+                                    }, this),
+                                    "Nueva Barbería"
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                lineNumber: 539,
+                                columnNumber: 11
+                            }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                        lineNumber: 311,
+                        lineNumber: 530,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                lineNumber: 301,
+                lineNumber: 520,
                 columnNumber: 7
             }, this),
             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mb-6 bg-red-50 border-l-4 border-red-500 text-red-700 px-4 py-3 rounded-lg shadow-sm",
+                className: "mb-6 bg-red-50 border-l-4 border-red-500 text-red-700 px-4 py-3 rounded-lg shadow-sm animate-fade-in",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center",
+                    className: "flex items-center justify-between",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                            className: "w-5 h-5 mr-2"
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                    className: "w-5 h-5 mr-2 flex-shrink-0"
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                    lineNumber: 554,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "font-medium",
+                                    children: error.includes('associated barbers') || error.includes('barberos asociados') ? 'No se puede eliminar la barbería porque tiene barberos activos trabajando ahí. Por favor, elimina o reasigna los barberos primero.' : error
+                                }, void 0, false, {
+                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                    lineNumber: 555,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 324,
+                            lineNumber: 553,
                             columnNumber: 13
                         }, this),
-                        error
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: ()=>setError(null),
+                            className: "ml-4 text-red-500 hover:text-red-700 transition-colors",
+                            "aria-label": "Cerrar",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                className: "w-4 h-4"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                lineNumber: 566,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                            lineNumber: 561,
+                            columnNumber: 13
+                        }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                    lineNumber: 323,
+                    lineNumber: 552,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                lineNumber: 322,
+                lineNumber: 551,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -515,7 +803,7 @@ function BarbershopsPage() {
                                         className: "w-5 h-5 text-gray-600"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                        lineNumber: 337,
+                                        lineNumber: 579,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -523,7 +811,7 @@ function BarbershopsPage() {
                                         children: "Filtros"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                        lineNumber: 338,
+                                        lineNumber: 580,
                                         columnNumber: 13
                                     }, this),
                                     hasActiveFilters && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -531,32 +819,32 @@ function BarbershopsPage() {
                                         children: "Activos"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                        lineNumber: 340,
+                                        lineNumber: 582,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 336,
+                                lineNumber: 578,
                                 columnNumber: 11
                             }, this),
                             showFilters ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronUp$3e$__["ChevronUp"], {
                                 className: "w-5 h-5 text-gray-600"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 346,
+                                lineNumber: 588,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                                 className: "w-5 h-5 text-gray-600"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 348,
+                                lineNumber: 590,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                        lineNumber: 332,
+                        lineNumber: 574,
                         columnNumber: 9
                     }, this),
                     showFilters && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -571,7 +859,7 @@ function BarbershopsPage() {
                                             children: "Buscar"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 357,
+                                            lineNumber: 599,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -581,7 +869,7 @@ function BarbershopsPage() {
                                                     className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 359,
+                                                    lineNumber: 601,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -595,24 +883,24 @@ function BarbershopsPage() {
                                                     className: "w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none bg-white"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 360,
+                                                    lineNumber: 602,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 358,
+                                            lineNumber: 600,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 356,
+                                    lineNumber: 598,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 354,
+                                lineNumber: 596,
                                 columnNumber: 13
                             }, this),
                             hasActiveFilters && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -625,31 +913,31 @@ function BarbershopsPage() {
                                             className: "w-4 h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 380,
+                                            lineNumber: 622,
                                             columnNumber: 19
                                         }, this),
                                         "Limpiar filtros"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 376,
+                                    lineNumber: 618,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 375,
+                                lineNumber: 617,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                        lineNumber: 353,
+                        lineNumber: 595,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                lineNumber: 331,
+                lineNumber: 573,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -660,19 +948,19 @@ function BarbershopsPage() {
                         className: "animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                        lineNumber: 393,
+                        lineNumber: 635,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                    lineNumber: 392,
+                    lineNumber: 634,
                     columnNumber: 11
                 }, this) : workplaces.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "text-center py-12 text-gray-500",
                     children: "No se encontraron barberías"
                 }, void 0, false, {
                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                    lineNumber: 396,
+                    lineNumber: 638,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                     children: [
@@ -690,7 +978,7 @@ function BarbershopsPage() {
                                                     children: "Barbería"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 405,
+                                                    lineNumber: 647,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -698,7 +986,7 @@ function BarbershopsPage() {
                                                     children: "Ubicación"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 408,
+                                                    lineNumber: 650,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -706,7 +994,7 @@ function BarbershopsPage() {
                                                     children: "Calificación"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 411,
+                                                    lineNumber: 653,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -714,7 +1002,7 @@ function BarbershopsPage() {
                                                     children: "Barberos"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 414,
+                                                    lineNumber: 656,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -722,7 +1010,7 @@ function BarbershopsPage() {
                                                     children: "Fecha de Registro"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 417,
+                                                    lineNumber: 659,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -730,18 +1018,18 @@ function BarbershopsPage() {
                                                     children: "Acciones"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 420,
+                                                    lineNumber: 662,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 404,
+                                            lineNumber: 646,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                        lineNumber: 403,
+                                        lineNumber: 645,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -770,7 +1058,7 @@ function BarbershopsPage() {
                                                                         }
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 432,
+                                                                        lineNumber: 674,
                                                                         columnNumber: 31
                                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                         className: "w-full h-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center",
@@ -778,17 +1066,17 @@ function BarbershopsPage() {
                                                                             className: "w-6 h-6 text-white"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                            lineNumber: 447,
+                                                                            lineNumber: 689,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 446,
+                                                                        lineNumber: 688,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 430,
+                                                                    lineNumber: 672,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -799,7 +1087,7 @@ function BarbershopsPage() {
                                                                             children: workplace.name
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                            lineNumber: 452,
+                                                                            lineNumber: 694,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         workplace.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -807,78 +1095,82 @@ function BarbershopsPage() {
                                                                             children: workplace.description
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                            lineNumber: 454,
+                                                                            lineNumber: 696,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 451,
+                                                                    lineNumber: 693,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 429,
+                                                            lineNumber: 671,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 428,
+                                                        lineNumber: 670,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                        className: "px-6 py-4 whitespace-nowrap",
+                                                        className: "px-6 py-4",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "flex items-center gap-1 text-sm text-gray-900",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
-                                                                    className: "w-4 h-4 text-gray-400"
+                                                                    className: "w-4 h-4 text-gray-400 flex-shrink-0"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 463,
+                                                                    lineNumber: 705,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "min-w-0",
                                                                     children: [
                                                                         workplace.address && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            children: workplace.address
+                                                                            className: "truncate",
+                                                                            title: workplace.address,
+                                                                            children: truncateText(workplace.address, 40)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                            lineNumber: 465,
-                                                                            columnNumber: 51
+                                                                            lineNumber: 708,
+                                                                            columnNumber: 31
                                                                         }, this),
                                                                         workplace.city && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "text-gray-500",
-                                                                            children: workplace.city
+                                                                            className: "text-gray-500 truncate",
+                                                                            title: workplace.city,
+                                                                            children: truncateText(workplace.city, 40)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                            lineNumber: 466,
-                                                                            columnNumber: 48
+                                                                            lineNumber: 713,
+                                                                            columnNumber: 31
                                                                         }, this),
                                                                         !workplace.address && !workplace.city && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                             className: "text-gray-400",
                                                                             children: "-"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                            lineNumber: 467,
-                                                                            columnNumber: 71
+                                                                            lineNumber: 718,
+                                                                            columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 464,
+                                                                    lineNumber: 706,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 462,
+                                                            lineNumber: 704,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 461,
+                                                        lineNumber: 703,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -890,7 +1182,7 @@ function BarbershopsPage() {
                                                                     className: "w-4 h-4 text-yellow-400 fill-yellow-400"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 473,
+                                                                    lineNumber: 725,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -898,7 +1190,7 @@ function BarbershopsPage() {
                                                                     children: workplace.rating.toFixed(1)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 474,
+                                                                    lineNumber: 726,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -910,18 +1202,18 @@ function BarbershopsPage() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 477,
+                                                                    lineNumber: 729,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 472,
+                                                            lineNumber: 724,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 471,
+                                                        lineNumber: 723,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -933,19 +1225,19 @@ function BarbershopsPage() {
                                                                     className: "w-4 h-4 text-gray-400"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 484,
+                                                                    lineNumber: 736,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 workplace.barbersCount || 0
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 483,
+                                                            lineNumber: 735,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 482,
+                                                        lineNumber: 734,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -953,7 +1245,7 @@ function BarbershopsPage() {
                                                         children: new Date(workplace.createdAt).toLocaleDateString('es-VE')
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 488,
+                                                        lineNumber: 740,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -969,12 +1261,12 @@ function BarbershopsPage() {
                                                                         className: "w-5 h-5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 498,
+                                                                        lineNumber: 750,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 493,
+                                                                    lineNumber: 745,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -985,12 +1277,12 @@ function BarbershopsPage() {
                                                                         className: "w-5 h-5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 505,
+                                                                        lineNumber: 757,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 500,
+                                                                    lineNumber: 752,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1001,12 +1293,12 @@ function BarbershopsPage() {
                                                                         className: "w-5 h-5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 512,
+                                                                        lineNumber: 764,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 507,
+                                                                    lineNumber: 759,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1017,45 +1309,45 @@ function BarbershopsPage() {
                                                                         className: "w-5 h-5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 519,
+                                                                        lineNumber: 771,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 514,
+                                                                    lineNumber: 766,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 492,
+                                                            lineNumber: 744,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 491,
+                                                        lineNumber: 743,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, workplace.id, true, {
                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                lineNumber: 427,
+                                                lineNumber: 669,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                        lineNumber: 425,
+                                        lineNumber: 667,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 402,
+                                lineNumber: 644,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 401,
+                            lineNumber: 643,
                             columnNumber: 13
                         }, this),
                         totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1070,7 +1362,7 @@ function BarbershopsPage() {
                                             children: currentPage
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 533,
+                                            lineNumber: 785,
                                             columnNumber: 26
                                         }, this),
                                         " de ",
@@ -1079,13 +1371,13 @@ function BarbershopsPage() {
                                             children: totalPages
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 533,
+                                            lineNumber: 785,
                                             columnNumber: 94
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 532,
+                                    lineNumber: 784,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1098,7 +1390,7 @@ function BarbershopsPage() {
                                             children: "Anterior"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 536,
+                                            lineNumber: 788,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1108,26 +1400,26 @@ function BarbershopsPage() {
                                             children: "Siguiente"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 543,
+                                            lineNumber: 795,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 535,
+                                    lineNumber: 787,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 531,
+                            lineNumber: 783,
                             columnNumber: 15
                         }, this)
                     ]
                 }, void 0, true)
             }, void 0, false, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                lineNumber: 390,
+                lineNumber: 632,
                 columnNumber: 7
             }, this),
             isModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1142,12 +1434,12 @@ function BarbershopsPage() {
                                 children: isEditMode ? 'Editar Barbería' : selectedWorkplace ? 'Detalles de la Barbería' : 'Nueva Barbería'
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 562,
+                                lineNumber: 814,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 561,
+                            lineNumber: 813,
                             columnNumber: 13
                         }, this),
                         selectedWorkplace && !isEditMode ? // View mode
@@ -1162,7 +1454,7 @@ function BarbershopsPage() {
                                             children: "ID de Barbería"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 572,
+                                            lineNumber: 824,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1173,7 +1465,7 @@ function BarbershopsPage() {
                                                     children: selectedWorkplace.id
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 574,
+                                                    lineNumber: 826,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1184,24 +1476,24 @@ function BarbershopsPage() {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 583,
+                                                        lineNumber: 835,
                                                         columnNumber: 25
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$copy$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Copy$3e$__["Copy"], {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 585,
+                                                        lineNumber: 837,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 577,
+                                                    lineNumber: 829,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 573,
+                                            lineNumber: 825,
                                             columnNumber: 19
                                         }, this),
                                         copiedId === selectedWorkplace.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1211,20 +1503,20 @@ function BarbershopsPage() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 591,
+                                                    lineNumber: 843,
                                                     columnNumber: 23
                                                 }, this),
                                                 "ID copiado al portapapeles"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 590,
+                                            lineNumber: 842,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 571,
+                                    lineNumber: 823,
                                     columnNumber: 17
                                 }, this),
                                 selectedWorkplace.banner && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1238,12 +1530,12 @@ function BarbershopsPage() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                        lineNumber: 600,
+                                        lineNumber: 852,
                                         columnNumber: 21
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 599,
+                                    lineNumber: 851,
                                     columnNumber: 19
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1256,7 +1548,7 @@ function BarbershopsPage() {
                                                     children: "Nombre"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 613,
+                                                    lineNumber: 865,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1264,13 +1556,13 @@ function BarbershopsPage() {
                                                     children: selectedWorkplace.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 614,
+                                                    lineNumber: 866,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 612,
+                                            lineNumber: 864,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1280,7 +1572,7 @@ function BarbershopsPage() {
                                                     children: "Ciudad"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 617,
+                                                    lineNumber: 869,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1288,13 +1580,13 @@ function BarbershopsPage() {
                                                     children: selectedWorkplace.city || '-'
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 618,
+                                                    lineNumber: 870,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 616,
+                                            lineNumber: 868,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1305,7 +1597,7 @@ function BarbershopsPage() {
                                                     children: "Dirección"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 621,
+                                                    lineNumber: 873,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1313,13 +1605,13 @@ function BarbershopsPage() {
                                                     children: selectedWorkplace.address || '-'
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 622,
+                                                    lineNumber: 874,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 620,
+                                            lineNumber: 872,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1330,7 +1622,7 @@ function BarbershopsPage() {
                                                     children: "Descripción"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 625,
+                                                    lineNumber: 877,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1338,13 +1630,13 @@ function BarbershopsPage() {
                                                     children: selectedWorkplace.description || '-'
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 626,
+                                                    lineNumber: 878,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 624,
+                                            lineNumber: 876,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1354,7 +1646,7 @@ function BarbershopsPage() {
                                                     children: "Calificación"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 629,
+                                                    lineNumber: 881,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1364,7 +1656,7 @@ function BarbershopsPage() {
                                                             className: "w-4 h-4 text-yellow-400 fill-yellow-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 631,
+                                                            lineNumber: 883,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1372,7 +1664,7 @@ function BarbershopsPage() {
                                                             children: selectedWorkplace.rating.toFixed(1)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 632,
+                                                            lineNumber: 884,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1384,19 +1676,19 @@ function BarbershopsPage() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 633,
+                                                            lineNumber: 885,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 630,
+                                                    lineNumber: 882,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 628,
+                                            lineNumber: 880,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1406,7 +1698,7 @@ function BarbershopsPage() {
                                                     children: "Barberos"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 637,
+                                                    lineNumber: 889,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1414,13 +1706,13 @@ function BarbershopsPage() {
                                                     children: selectedWorkplace.barbersCount || 0
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 638,
+                                                    lineNumber: 890,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 636,
+                                            lineNumber: 888,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1430,7 +1722,7 @@ function BarbershopsPage() {
                                                     children: "Imagen"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 641,
+                                                    lineNumber: 893,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1438,13 +1730,13 @@ function BarbershopsPage() {
                                                     children: selectedWorkplace.image || '-'
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 642,
+                                                    lineNumber: 894,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 640,
+                                            lineNumber: 892,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1454,7 +1746,7 @@ function BarbershopsPage() {
                                                     children: "Banner"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 645,
+                                                    lineNumber: 897,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1462,19 +1754,19 @@ function BarbershopsPage() {
                                                     children: selectedWorkplace.banner || '-'
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 646,
+                                                    lineNumber: 898,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 644,
+                                            lineNumber: 896,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 611,
+                                    lineNumber: 863,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1488,7 +1780,7 @@ function BarbershopsPage() {
                                                     children: "Galería Multimedia"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 653,
+                                                    lineNumber: 905,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1504,7 +1796,7 @@ function BarbershopsPage() {
                                                             id: "media-upload"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 655,
+                                                            lineNumber: 907,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -1516,14 +1808,14 @@ function BarbershopsPage() {
                                                                         className: "animate-spin rounded-full h-4 w-4 border-b-2 border-white"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 670,
+                                                                        lineNumber: 922,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: "Subiendo..."
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 671,
+                                                                        lineNumber: 923,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
@@ -1533,33 +1825,33 @@ function BarbershopsPage() {
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 675,
+                                                                        lineNumber: 927,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: "Agregar Multimedia"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 676,
+                                                                        lineNumber: 928,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 664,
+                                                            lineNumber: 916,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 654,
+                                                    lineNumber: 906,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 652,
+                                            lineNumber: 904,
                                             columnNumber: 19
                                         }, this),
                                         workplaceMedia.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1569,14 +1861,14 @@ function BarbershopsPage() {
                                                     className: "w-12 h-12 mx-auto mb-2 text-gray-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 685,
+                                                    lineNumber: 937,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     children: "No hay multimedia agregada"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 686,
+                                                    lineNumber: 938,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1584,13 +1876,13 @@ function BarbershopsPage() {
                                                     children: "Sube imágenes o videos para la galería"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 687,
+                                                    lineNumber: 939,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 684,
+                                            lineNumber: 936,
                                             columnNumber: 21
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "grid grid-cols-3 gap-4",
@@ -1607,7 +1899,7 @@ function BarbershopsPage() {
                                                                 children: "Tu navegador no soporta videos."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                lineNumber: 695,
+                                                                lineNumber: 947,
                                                                 columnNumber: 31
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                                 src: getImageUrl(media.url),
@@ -1619,12 +1911,12 @@ function BarbershopsPage() {
                                                                 }
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                lineNumber: 704,
+                                                                lineNumber: 956,
                                                                 columnNumber: 31
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 693,
+                                                            lineNumber: 945,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1635,12 +1927,12 @@ function BarbershopsPage() {
                                                                 className: "w-4 h-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                lineNumber: 720,
+                                                                lineNumber: 972,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 715,
+                                                            lineNumber: 967,
                                                             columnNumber: 27
                                                         }, this),
                                                         media.caption && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1648,24 +1940,24 @@ function BarbershopsPage() {
                                                             children: media.caption
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 723,
+                                                            lineNumber: 975,
                                                             columnNumber: 29
                                                         }, this)
                                                     ]
                                                 }, media.id, true, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 692,
+                                                    lineNumber: 944,
                                                     columnNumber: 25
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 690,
+                                            lineNumber: 942,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 651,
+                                    lineNumber: 903,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1681,7 +1973,7 @@ function BarbershopsPage() {
                                             children: "Cerrar"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 734,
+                                            lineNumber: 986,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1692,19 +1984,19 @@ function BarbershopsPage() {
                                             children: "Editar"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 744,
+                                            lineNumber: 996,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 733,
+                                    lineNumber: 985,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 569,
+                            lineNumber: 821,
                             columnNumber: 15
                         }, this) : // Create/Edit form
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1726,13 +2018,13 @@ function BarbershopsPage() {
                                                             children: "*"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 760,
+                                                            lineNumber: 1012,
                                                             columnNumber: 30
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 759,
+                                                    lineNumber: 1011,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1741,7 +2033,7 @@ function BarbershopsPage() {
                                                     className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 762,
+                                                    lineNumber: 1014,
                                                     columnNumber: 21
                                                 }, this),
                                                 errors.name && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1749,13 +2041,13 @@ function BarbershopsPage() {
                                                     children: errors.name.message
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 768,
+                                                    lineNumber: 1020,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 758,
+                                            lineNumber: 1010,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1765,7 +2057,7 @@ function BarbershopsPage() {
                                                     children: "Dirección"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 773,
+                                                    lineNumber: 1025,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1774,13 +2066,13 @@ function BarbershopsPage() {
                                                     className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 774,
+                                                    lineNumber: 1026,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 772,
+                                            lineNumber: 1024,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1790,7 +2082,7 @@ function BarbershopsPage() {
                                                     children: "Ciudad"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 782,
+                                                    lineNumber: 1034,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1799,13 +2091,60 @@ function BarbershopsPage() {
                                                     className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 783,
+                                                    lineNumber: 1035,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 781,
+                                            lineNumber: 1033,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "hidden",
+                                            ...register('latitude', {
+                                                valueAsNumber: true
+                                            })
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                            lineNumber: 1043,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "hidden",
+                                            ...register('longitude', {
+                                                valueAsNumber: true
+                                            })
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                            lineNumber: 1044,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "col-span-2",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(LocationPicker, {
+                                                latitude: watch('latitude'),
+                                                longitude: watch('longitude'),
+                                                onLocationChange: (lat, lng)=>{
+                                                    setValue('latitude', lat, {
+                                                        shouldValidate: true
+                                                    });
+                                                    setValue('longitude', lng, {
+                                                        shouldValidate: true
+                                                    });
+                                                },
+                                                onClear: ()=>{
+                                                    setValue('latitude', null);
+                                                    setValue('longitude', null);
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                lineNumber: 1047,
+                                                columnNumber: 21
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                            lineNumber: 1046,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1816,7 +2155,7 @@ function BarbershopsPage() {
                                                     children: "Descripción"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 791,
+                                                    lineNumber: 1062,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1825,13 +2164,115 @@ function BarbershopsPage() {
                                                     className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 792,
+                                                    lineNumber: 1063,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 790,
+                                            lineNumber: 1061,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "col-span-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                    className: "block text-sm font-medium text-gray-700 mb-1",
+                                                    children: "Redes Sociales"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                    lineNumber: 1071,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "grid grid-cols-2 gap-4",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                    className: "block text-xs text-gray-600 mb-1",
+                                                                    children: "Instagram"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                                    lineNumber: 1074,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                    ...register('instagramUrl'),
+                                                                    type: "text",
+                                                                    placeholder: "@usuario o https://instagram.com/usuario",
+                                                                    className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                                    lineNumber: 1075,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                errors.instagramUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "mt-1 text-xs text-red-600",
+                                                                    children: errors.instagramUrl.message
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                                    lineNumber: 1082,
+                                                                    columnNumber: 27
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                            lineNumber: 1073,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                    className: "block text-xs text-gray-600 mb-1",
+                                                                    children: "TikTok"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                                    lineNumber: 1086,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                    ...register('tiktokUrl'),
+                                                                    type: "text",
+                                                                    placeholder: "@usuario o https://tiktok.com/@usuario",
+                                                                    className: "w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                                    lineNumber: 1087,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                errors.tiktokUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "mt-1 text-xs text-red-600",
+                                                                    children: errors.tiktokUrl.message
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                                    lineNumber: 1094,
+                                                                    columnNumber: 27
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                            lineNumber: 1085,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                    lineNumber: 1072,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "mt-1 text-xs text-gray-500",
+                                                    children: "Puedes usar @usuario o la URL completa. El sistema normalizará automáticamente."
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                                    lineNumber: 1098,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
+                                            lineNumber: 1070,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1842,7 +2283,7 @@ function BarbershopsPage() {
                                                     children: "Imagen de Perfil"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 800,
+                                                    lineNumber: 1104,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1858,7 +2299,7 @@ function BarbershopsPage() {
                                                                     className: "flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 803,
+                                                                    lineNumber: 1107,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1870,7 +2311,7 @@ function BarbershopsPage() {
                                                                     id: "image-upload-form"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 809,
+                                                                    lineNumber: 1113,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -1882,14 +2323,14 @@ function BarbershopsPage() {
                                                                                 className: "animate-spin rounded-full h-4 w-4 border-b-2 border-indigo-600"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                                lineNumber: 823,
+                                                                                lineNumber: 1127,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: "Subiendo..."
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                                lineNumber: 824,
+                                                                                lineNumber: 1128,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
@@ -1899,27 +2340,27 @@ function BarbershopsPage() {
                                                                                 className: "w-4 h-4"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                                lineNumber: 828,
+                                                                                lineNumber: 1132,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: "Subir"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                                lineNumber: 829,
+                                                                                lineNumber: 1133,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 817,
+                                                                    lineNumber: 1121,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 802,
+                                                            lineNumber: 1106,
                                                             columnNumber: 23
                                                         }, this),
                                                         watchedImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1933,24 +2374,24 @@ function BarbershopsPage() {
                                                                 }
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                lineNumber: 836,
+                                                                lineNumber: 1140,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 835,
+                                                            lineNumber: 1139,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 801,
+                                                    lineNumber: 1105,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 799,
+                                            lineNumber: 1103,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1961,7 +2402,7 @@ function BarbershopsPage() {
                                                     children: "Banner"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 850,
+                                                    lineNumber: 1154,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1977,7 +2418,7 @@ function BarbershopsPage() {
                                                                     className: "flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 853,
+                                                                    lineNumber: 1157,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1989,7 +2430,7 @@ function BarbershopsPage() {
                                                                     id: "banner-upload-form"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 859,
+                                                                    lineNumber: 1163,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2001,14 +2442,14 @@ function BarbershopsPage() {
                                                                                 className: "animate-spin rounded-full h-4 w-4 border-b-2 border-indigo-600"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                                lineNumber: 873,
+                                                                                lineNumber: 1177,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: "Subiendo..."
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                                lineNumber: 874,
+                                                                                lineNumber: 1178,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
@@ -2018,27 +2459,27 @@ function BarbershopsPage() {
                                                                                 className: "w-4 h-4"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                                lineNumber: 878,
+                                                                                lineNumber: 1182,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: "Subir"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                                lineNumber: 879,
+                                                                                lineNumber: 1183,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 867,
+                                                                    lineNumber: 1171,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 852,
+                                                            lineNumber: 1156,
                                                             columnNumber: 23
                                                         }, this),
                                                         watchedBanner && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2052,30 +2493,30 @@ function BarbershopsPage() {
                                                                 }
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                lineNumber: 886,
+                                                                lineNumber: 1190,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 885,
+                                                            lineNumber: 1189,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 851,
+                                                    lineNumber: 1155,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 849,
+                                            lineNumber: 1153,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 757,
+                                    lineNumber: 1009,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2092,7 +2533,7 @@ function BarbershopsPage() {
                                             children: "Cancelar"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 901,
+                                            lineNumber: 1205,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2101,30 +2542,30 @@ function BarbershopsPage() {
                                             children: isEditMode ? 'Actualizar' : 'Crear'
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 912,
+                                            lineNumber: 1216,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 900,
+                                    lineNumber: 1204,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 756,
+                            lineNumber: 1008,
                             columnNumber: 15
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                    lineNumber: 560,
+                    lineNumber: 812,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                lineNumber: 559,
+                lineNumber: 811,
                 columnNumber: 9
             }, this),
             isMediaModalOpen && mediaWorkplace && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2142,7 +2583,7 @@ function BarbershopsPage() {
                                             children: "Galería Multimedia"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 931,
+                                            lineNumber: 1235,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2150,13 +2591,13 @@ function BarbershopsPage() {
                                             children: mediaWorkplace.name
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 932,
+                                            lineNumber: 1236,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 930,
+                                    lineNumber: 1234,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2166,18 +2607,18 @@ function BarbershopsPage() {
                                         className: "w-6 h-6"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                        lineNumber: 938,
+                                        lineNumber: 1242,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 934,
+                                    lineNumber: 1238,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 929,
+                            lineNumber: 1233,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2193,12 +2634,12 @@ function BarbershopsPage() {
                                                 children: "Agregar Multimedia"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                lineNumber: 946,
+                                                lineNumber: 1250,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 945,
+                                            lineNumber: 1249,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2217,7 +2658,7 @@ function BarbershopsPage() {
                                                             id: "media-upload-modal"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 950,
+                                                            lineNumber: 1254,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -2228,20 +2669,20 @@ function BarbershopsPage() {
                                                                     className: "w-4 h-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 963,
+                                                                    lineNumber: 1267,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: "Seleccionar Archivos"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 964,
+                                                                    lineNumber: 1268,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 959,
+                                                            lineNumber: 1263,
                                                             columnNumber: 21
                                                         }, this),
                                                         selectedFiles.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2254,14 +2695,14 @@ function BarbershopsPage() {
                                                                         className: "animate-spin rounded-full h-4 w-4 border-b-2 border-white"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 974,
+                                                                        lineNumber: 1278,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: "Subiendo..."
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 975,
+                                                                        lineNumber: 1279,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
@@ -2271,7 +2712,7 @@ function BarbershopsPage() {
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 979,
+                                                                        lineNumber: 1283,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2283,14 +2724,14 @@ function BarbershopsPage() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                        lineNumber: 980,
+                                                                        lineNumber: 1284,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 967,
+                                                            lineNumber: 1271,
                                                             columnNumber: 23
                                                         }, this),
                                                         selectedFiles.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2299,13 +2740,13 @@ function BarbershopsPage() {
                                                             children: "Limpiar"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 986,
+                                                            lineNumber: 1290,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 949,
+                                                    lineNumber: 1253,
                                                     columnNumber: 19
                                                 }, this),
                                                 selectedFiles.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2320,7 +2761,7 @@ function BarbershopsPage() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 996,
+                                                            lineNumber: 1300,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2332,7 +2773,7 @@ function BarbershopsPage() {
                                                                             className: "w-2 h-2 bg-indigo-600 rounded-full"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                            lineNumber: 1002,
+                                                                            lineNumber: 1306,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         file.name,
@@ -2342,24 +2783,24 @@ function BarbershopsPage() {
                                                                     ]
                                                                 }, index, true, {
                                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                                    lineNumber: 1001,
+                                                                    lineNumber: 1305,
                                                                     columnNumber: 27
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 999,
+                                                            lineNumber: 1303,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 995,
+                                                    lineNumber: 1299,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 948,
+                                            lineNumber: 1252,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2367,13 +2808,13 @@ function BarbershopsPage() {
                                             children: "Puedes seleccionar múltiples imágenes o videos a la vez"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 1010,
+                                            lineNumber: 1314,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 944,
+                                    lineNumber: 1248,
                                     columnNumber: 15
                                 }, this),
                                 workplaceMedia.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2383,7 +2824,7 @@ function BarbershopsPage() {
                                             className: "w-16 h-16 mx-auto mb-4 text-gray-400"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 1016,
+                                            lineNumber: 1320,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2391,7 +2832,7 @@ function BarbershopsPage() {
                                             children: "No hay multimedia agregada"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 1017,
+                                            lineNumber: 1321,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2399,13 +2840,13 @@ function BarbershopsPage() {
                                             children: "Sube imágenes o videos para la galería"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 1018,
+                                            lineNumber: 1322,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 1015,
+                                    lineNumber: 1319,
                                     columnNumber: 17
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "grid grid-cols-3 gap-4",
@@ -2422,7 +2863,7 @@ function BarbershopsPage() {
                                                         children: "Tu navegador no soporta videos."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 1026,
+                                                        lineNumber: 1330,
                                                         columnNumber: 27
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                         src: getImageUrl(media.url),
@@ -2434,12 +2875,12 @@ function BarbershopsPage() {
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 1035,
+                                                        lineNumber: 1339,
                                                         columnNumber: 27
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 1024,
+                                                    lineNumber: 1328,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2450,12 +2891,12 @@ function BarbershopsPage() {
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                        lineNumber: 1051,
+                                                        lineNumber: 1355,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 1046,
+                                                    lineNumber: 1350,
                                                     columnNumber: 23
                                                 }, this),
                                                 media.caption && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2463,7 +2904,7 @@ function BarbershopsPage() {
                                                     children: media.caption
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 1054,
+                                                    lineNumber: 1358,
                                                     columnNumber: 25
                                                 }, this),
                                                 media.type === 'video' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2473,31 +2914,31 @@ function BarbershopsPage() {
                                                             className: "w-3 h-3 inline mr-1"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                            lineNumber: 1060,
+                                                            lineNumber: 1364,
                                                             columnNumber: 27
                                                         }, this),
                                                         "Video"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                                    lineNumber: 1059,
+                                                    lineNumber: 1363,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, media.id, true, {
                                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                            lineNumber: 1023,
+                                            lineNumber: 1327,
                                             columnNumber: 21
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 1021,
+                                    lineNumber: 1325,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 942,
+                            lineNumber: 1246,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2508,23 +2949,23 @@ function BarbershopsPage() {
                                 children: "Cerrar"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                lineNumber: 1071,
+                                lineNumber: 1375,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 1070,
+                            lineNumber: 1374,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                    lineNumber: 928,
+                    lineNumber: 1232,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                lineNumber: 927,
+                lineNumber: 1231,
                 columnNumber: 9
             }, this),
             deleteConfirm && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2537,7 +2978,7 @@ function BarbershopsPage() {
                             children: "Confirmar Eliminación"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 1086,
+                            lineNumber: 1390,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2545,7 +2986,7 @@ function BarbershopsPage() {
                             children: "¿Estás seguro de que deseas eliminar esta barbería? Esta acción no se puede deshacer."
                         }, void 0, false, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 1087,
+                            lineNumber: 1391,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2557,7 +2998,7 @@ function BarbershopsPage() {
                                     children: "Cancelar"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 1091,
+                                    lineNumber: 1395,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2566,30 +3007,30 @@ function BarbershopsPage() {
                                     children: "Eliminar"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                                    lineNumber: 1097,
+                                    lineNumber: 1401,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                            lineNumber: 1090,
+                            lineNumber: 1394,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                    lineNumber: 1085,
+                    lineNumber: 1389,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-                lineNumber: 1084,
+                lineNumber: 1388,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page.tsx",
-        lineNumber: 299,
+        lineNumber: 518,
         columnNumber: 5
     }, this);
 }
@@ -2598,9 +3039,10 @@ _s(BarbershopsPage, "87eB/uuN4EL8xbMqZ540nGvw3Ag=", false, function() {
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useForm"]
     ];
 });
-_c = BarbershopsPage;
-var _c;
-__turbopack_context__.k.register(_c, "BarbershopsPage");
+_c1 = BarbershopsPage;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "LocationPicker");
+__turbopack_context__.k.register(_c1, "BarbershopsPage");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

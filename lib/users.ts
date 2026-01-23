@@ -1,6 +1,6 @@
 import api from './api';
 
-export type UserRole = 'ADMIN' | 'CLIENT' | 'USER';
+export type UserRole = 'ADMIN' | 'CLIENT' | 'USER' | 'BARBERSHOP';
 
 export interface User {
   id: string;
@@ -13,6 +13,7 @@ export interface User {
   country?: string | null;
   gender?: string | null;
   role: UserRole;
+  workplaceId?: string | null;
   emailVerified?: boolean | null;
   createdAt: string;
   updatedAt: string;
@@ -25,6 +26,7 @@ export interface CreateUserData {
   phone?: string;
   location?: string;
   role?: UserRole;
+  workplaceId?: string;
   country?: string;
   gender?: string;
 }
@@ -34,6 +36,7 @@ export interface UpdateUserData {
   phone?: string;
   location?: string;
   role?: UserRole;
+  workplaceId?: string;
   country?: string;
   gender?: string;
   password?: string;
@@ -56,7 +59,7 @@ export const usersService = {
       page: page.toString(),
       limit: limit.toString(),
     });
-    
+
     if (search) {
       params.append('search', search);
     }

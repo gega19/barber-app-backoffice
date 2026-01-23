@@ -1,0 +1,14 @@
+{
+  "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/map/LocationPicker.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/Desktop/projects/barber-application/barber-app-backoffice/components/map/LocationPicker.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/d48ad_barber-app-backoffice_components_map_MapComponent_tsx_ab6dd9a2._.js",
+      "static/chunks/Desktop_projects_barber-application_barber-app-backoffice_8eb57470._.js",
+      "static/chunks/d48ad_barber-app-backoffice_components_map_LocationPicker_tsx_5bc90f66._.js",
+      "static/chunks/2d413_leaflet_dist_5fbc5c14._.js",
+      "static/chunks/d48ad_barber-app-backoffice_components_map_MapComponent_tsx_2c31809d._.js",
+      "static/chunks/2d413_leaflet_dist_leaflet_16a8d522.css",
+      "static/chunks/d48ad_barber-app-backoffice_components_map_MapComponent_tsx_082446d2._.js"
+    ]
+  }
+}

@@ -75,6 +75,10 @@ const usersService = {
     async getBarbers () {
         const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].get('/barbers');
         return response.data.data || [];
+    },
+    async verifyUserEmail (userId) {
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].put(`/users/${userId}/verify-email`);
+        return response.data.data;
     }
 };
 }),
@@ -89,7 +93,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barbe
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$js$2d$cookie$2f$dist$2f$js$2e$cookie$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/projects/barber-application/barber-app-backoffice/node_modules/js-cookie/dist/js.cookie.mjs [app-ssr] (ecmascript)");
 ;
 ;
-const baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
+const baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://barber-api.corporacionceg.com/api';
 const uploadService = {
     async uploadFile (file) {
         const formData = new FormData();
@@ -160,7 +164,7 @@ const getImageUrl = (url)=>{
     if (url.startsWith('http')) {
         return url;
     }
-    const baseUrl = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api').replace('/api', '');
+    const baseUrl = (process.env.NEXT_PUBLIC_API_URL || 'https://barber-api.corporacionceg.com/api').replace('/api', '');
     return `${baseUrl}${url}`;
 };
 const promotionSchema = __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$node_modules$2f$zod$2f$v4$2f$classic$2f$external$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__["z"].object({

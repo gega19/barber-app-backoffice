@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { authService } from '@/lib/auth';
 import api from '@/lib/api';
-import { 
-  Users, 
-  Calendar, 
-  Scissors, 
+import {
+  Users,
+  Calendar,
+  Scissors,
   Star,
   DollarSign,
   BarChart3,
@@ -59,7 +59,7 @@ export default function DashboardPage() {
 
     // Verificar permisos de acceso al backoffice
     const userRole = authService.getCurrentRole();
-    
+
     // Si no hay role o no tiene acceso, redirigir al login
     if (!userRole || !authService.canAccessBackoffice(userRole)) {
       authService.logout();
@@ -74,32 +74,44 @@ export default function DashboardPage() {
   const loadAllStats = async () => {
     setIsLoading(true);
     try {
-      // Cargar estadísticas principales
-      const statsResponse = await api.get<{ success: boolean; data: DashboardStats }>('/stats/dashboard');
-      if (statsResponse.data.success && statsResponse.data.data) {
-        setStats(statsResponse.data.data);
-      }
+      const userRole = authService.getCurrentRole();
 
-      // Cargar citas por mes
-      const appointmentsResponse = await api.get<{ success: boolean; data: AppointmentByMonth[] }>('/stats/appointments-by-month');
-      if (appointmentsResponse.data.success && appointmentsResponse.data.data) {
-        setAppointmentsByMonth(appointmentsResponse.data.data);
-      }
+      if (userRole === 'BARBERSHOP') {
+        const statsResponse = await api.get<{ success: boolean; data: any }>('/my-workplace/stats');
+        const data = statsResponse.data.data;
+        setStats({
+          totalUsers: 0, // Not relevant for barbershop
+          totalAppointments: data.totalAppointments || 0,
+          totalBarbers: 0, // Could fetch from barbers endpoint
+          totalRevenue: data.totalRevenue || 0,
+          pendingAppointments: (data.totalAppointments || 0) - (data.completedAppointments || 0),
+          averageRating: 0,
+        });
+      } else {
+        // Cargar estadísticas principales de ADMIN
+        const statsResponse = await api.get<{ success: boolean; data: DashboardStats }>('/stats/dashboard');
+        if (statsResponse.data.success && statsResponse.data.data) {
+          setStats(statsResponse.data.data);
+        }
 
-      // Cargar ingresos por mes
-      const revenueResponse = await api.get<{ success: boolean; data: RevenueByMonth[] }>('/stats/revenue-by-month');
-      if (revenueResponse.data.success && revenueResponse.data.data) {
-        setRevenueByMonth(revenueResponse.data.data);
-      }
+        // Cargar gráficas solo para ADMIN por ahora (o adaptar para BARBERSHOP luego)
+        const appointmentsResponse = await api.get<{ success: boolean; data: AppointmentByMonth[] }>('/stats/appointments-by-month');
+        if (appointmentsResponse.data.success && appointmentsResponse.data.data) {
+          setAppointmentsByMonth(appointmentsResponse.data.data);
+        }
 
-      // Cargar citas por estado
-      const statusResponse = await api.get<{ success: boolean; data: AppointmentByStatus[] }>('/stats/appointments-by-status');
-      if (statusResponse.data.success && statusResponse.data.data) {
-        setAppointmentsByStatus(statusResponse.data.data);
+        const revenueResponse = await api.get<{ success: boolean; data: RevenueByMonth[] }>('/stats/revenue-by-month');
+        if (revenueResponse.data.success && revenueResponse.data.data) {
+          setRevenueByMonth(revenueResponse.data.data);
+        }
+
+        const statusResponse = await api.get<{ success: boolean; data: AppointmentByStatus[] }>('/stats/appointments-by-status');
+        if (statusResponse.data.success && statusResponse.data.data) {
+          setAppointmentsByStatus(statusResponse.data.data);
+        }
       }
     } catch (error) {
       console.error('Error loading stats:', error);
-      // En caso de error, mantener valores por defecto
       setStats({
         totalUsers: 0,
         totalAppointments: 0,
@@ -165,9 +177,9 @@ export default function DashboardPage() {
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-3">
-          <img 
-            src="/logo.png" 
-            alt="bartop" 
+          <img
+            src="/logo.png"
+            alt="bartop"
             className="w-10 h-10 rounded-lg object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
@@ -184,34 +196,69 @@ export default function DashboardPage() {
         <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Acciones Rápidas</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <button 
-              onClick={() => router.push('/dashboard/barbershops')}
-              className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
-            >
-              <p className="font-medium text-gray-900">Ver Barberías</p>
-              <p className="text-sm text-gray-600 mt-1">Gestionar barberías</p>
-            </button>
-            <button 
-              onClick={() => router.push('/dashboard/appointments')}
-              className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
-            >
-              <p className="font-medium text-gray-900">Ver Citas</p>
-              <p className="text-sm text-gray-600 mt-1">Gestionar citas</p>
-            </button>
-            <button 
-              onClick={() => router.push('/dashboard/users')}
-              className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
-            >
-              <p className="font-medium text-gray-900">Ver Usuarios</p>
-              <p className="text-sm text-gray-600 mt-1">Gestionar usuarios</p>
-            </button>
-            <button 
-              onClick={() => router.push('/dashboard/promotions')}
-              className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
-            >
-              <p className="font-medium text-gray-900">Promociones</p>
-              <p className="text-sm text-gray-600 mt-1">Gestionar promociones</p>
-            </button>
+            {authService.getCurrentRole() === 'BARBERSHOP' ? (
+              <>
+                <button
+                  onClick={() => router.push('/dashboard/my-barbershop')}
+                  className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+                >
+                  <p className="font-medium text-gray-900">Mi Barbería</p>
+                  <p className="text-sm text-gray-600 mt-1">Perfil comercial</p>
+                </button>
+                <button
+                  onClick={() => router.push('/dashboard/appointments')}
+                  className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+                >
+                  <p className="font-medium text-gray-900">Agenda</p>
+                  <p className="text-sm text-gray-600 mt-1">Ver citas de hoy</p>
+                </button>
+                <button
+                  onClick={() => router.push('/dashboard/my-barbershop/barbers')}
+                  className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+                >
+                  <p className="font-medium text-gray-900">Equipo</p>
+                  <p className="text-sm text-gray-600 mt-1">Gestionar barberos</p>
+                </button>
+                <button
+                  onClick={() => router.push('/dashboard/my-workplace/stats')}
+                  className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+                >
+                  <p className="font-medium text-gray-900">Ganancias</p>
+                  <p className="text-sm text-gray-600 mt-1">Ver estadísticas</p>
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => router.push('/dashboard/barbershops')}
+                  className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+                >
+                  <p className="font-medium text-gray-900">Ver Barberías</p>
+                  <p className="text-sm text-gray-600 mt-1">Gestionar barberías</p>
+                </button>
+                <button
+                  onClick={() => router.push('/dashboard/appointments')}
+                  className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+                >
+                  <p className="font-medium text-gray-900">Ver Citas</p>
+                  <p className="text-sm text-gray-600 mt-1">Gestionar citas</p>
+                </button>
+                <button
+                  onClick={() => router.push('/dashboard/users')}
+                  className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+                >
+                  <p className="font-medium text-gray-900">Ver Usuarios</p>
+                  <p className="text-sm text-gray-600 mt-1">Gestionar usuarios</p>
+                </button>
+                <button
+                  onClick={() => router.push('/dashboard/promotions')}
+                  className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+                >
+                  <p className="font-medium text-gray-900">Promociones</p>
+                  <p className="text-sm text-gray-600 mt-1">Gestionar promociones</p>
+                </button>
+              </>
+            )}
           </div>
         </div>
 
@@ -238,53 +285,55 @@ export default function DashboardPage() {
           })}
         </div>
 
-        {/* Charts - TERCERO */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Gráfica de Citas por Mes */}
-          <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-            <div className="flex items-center gap-2 mb-4">
-              <BarChart3 className="w-5 h-5 text-indigo-600" />
-              <h2 className="text-lg font-semibold text-gray-900">Citas por Mes</h2>
+        {/* Charts - TERCERO (Solo para ADMIN) */}
+        {authService.getCurrentRole() === 'ADMIN' && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Gráfica de Citas por Mes */}
+            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+              <div className="flex items-center gap-2 mb-4">
+                <BarChart3 className="w-5 h-5 text-indigo-600" />
+                <h2 className="text-lg font-semibold text-gray-900">Citas por Mes</h2>
+              </div>
+              <ChartComponent
+                type="line"
+                data={appointmentsByMonth as Array<Record<string, any>>}
+                dataKey="count"
+                xAxisKey="month"
+                color="#6366f1"
+              />
             </div>
-            <ChartComponent
-              type="line"
-              data={appointmentsByMonth as Array<Record<string, any>>}
-              dataKey="count"
-              xAxisKey="month"
-              color="#6366f1"
-            />
-          </div>
 
-          {/* Gráfica de Ingresos por Mes */}
-          <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-            <div className="flex items-center gap-2 mb-4">
-              <DollarSign className="w-5 h-5 text-green-600" />
-              <h2 className="text-lg font-semibold text-gray-900">Ingresos por Mes</h2>
+            {/* Gráfica de Ingresos por Mes */}
+            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+              <div className="flex items-center gap-2 mb-4">
+                <DollarSign className="w-5 h-5 text-green-600" />
+                <h2 className="text-lg font-semibold text-gray-900">Ingresos por Mes</h2>
+              </div>
+              <ChartComponent
+                type="bar"
+                data={revenueByMonth as Array<Record<string, any>>}
+                dataKey="revenue"
+                xAxisKey="month"
+                color="#10b981"
+              />
             </div>
-            <ChartComponent
-              type="bar"
-              data={revenueByMonth as Array<Record<string, any>>}
-              dataKey="revenue"
-              xAxisKey="month"
-              color="#10b981"
-            />
-          </div>
 
-          {/* Gráfica de Citas por Estado */}
-          <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200 lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <PieChart className="w-5 h-5 text-purple-600" />
-              <h2 className="text-lg font-semibold text-gray-900">Distribución de Citas por Estado</h2>
+            {/* Gráfica de Citas por Estado */}
+            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200 lg:col-span-2">
+              <div className="flex items-center gap-2 mb-4">
+                <PieChart className="w-5 h-5 text-purple-600" />
+                <h2 className="text-lg font-semibold text-gray-900">Distribución de Citas por Estado</h2>
+              </div>
+              <ChartComponent
+                type="pie"
+                data={appointmentsByStatus as Array<Record<string, any>>}
+                dataKey="count"
+                nameKey="status"
+                color="#8b5cf6"
+              />
             </div>
-            <ChartComponent
-              type="pie"
-              data={appointmentsByStatus as Array<Record<string, any>>}
-              dataKey="count"
-              nameKey="status"
-              color="#8b5cf6"
-            />
           </div>
-        </div>
+        )}
       </main>
     </div>
   );
