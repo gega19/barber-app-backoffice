@@ -72,7 +72,7 @@ export default function AppVersionsPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!selectedFile) {
+    if (formData.updateType === 'apk' && !selectedFile) {
       setError('Por favor selecciona un archivo APK');
       return;
     }
@@ -125,7 +125,7 @@ export default function AppVersionsPage() {
         updateUrl: formData.updateUrl || undefined,
         updateType: formData.updateType || undefined,
         forceUpdate: formData.forceUpdate,
-        apk: selectedFile,
+        apk: formData.updateType === 'apk' ? selectedFile : undefined,
       };
 
       await appVersionsService.createVersion(createData);
