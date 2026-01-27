@@ -31,7 +31,7 @@ export interface CreateAppVersionData {
   updateUrl?: string;
   updateType?: string; // "store" | "url" | "apk"
   forceUpdate?: boolean;
-  apk: File;
+  apk?: File;
 }
 
 export interface UpdateAppVersionData {
@@ -81,19 +81,20 @@ export const appVersionsService = {
   async createVersion(data: CreateAppVersionData): Promise<AppVersion> {
     const formData = new FormData();
     
-    // Verificar que el archivo existe
-    if (!data.apk || !(data.apk instanceof File)) {
+    // Verificar archivo APK solo cuando el tipo es "apk"
+    if (data.updateType === 'apk' && (!data.apk || !(data.apk instanceof File))) {
       throw new Error('El archivo APK es requerido');
     }
     
     console.log('📦 Creating app version...');
-    console.log('📄 File:', {
-      name: data.apk.name,
-      size: data.apk.size,
-      type: data.apk.type,
-    });
-    
-    formData.append('apk', data.apk);
+    if (data.apk) {
+      console.log('📄 File:', {
+        name: data.apk.name,
+        size: data.apk.size,
+        type: data.apk.type,
+      });
+      formData.append('apk', data.apk);
+    }
     formData.append('version', data.version);
     formData.append('versionCode', data.versionCode.toString());
     if (data.releaseNotes) {
@@ -115,9 +116,14 @@ export const appVersionsService = {
       formData.append('forceUpdate', data.forceUpdate.toString());
     }
 
-    // Verificar que el archivo está en el FormData
+    // Verificar que el archivo está en el FormData (solo si aplica)
     const apkInFormData = formData.get('apk');
-    console.log('✅ File in FormData:', apkInFormData instanceof File ? 'Yes' : 'No');
+    if (data.updateType === 'apk') {
+      console.log(
+        '✅ File in FormData:',
+        apkInFormData instanceof File ? 'Yes' : 'No',
+      );
+    }
 
     // Obtener token de cookies
     const token = Cookies.get('token');

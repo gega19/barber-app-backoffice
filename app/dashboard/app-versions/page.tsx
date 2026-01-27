@@ -125,7 +125,7 @@ export default function AppVersionsPage() {
         updateUrl: formData.updateUrl || undefined,
         updateType: formData.updateType || undefined,
         forceUpdate: formData.forceUpdate,
-        apk: formData.updateType === 'apk' ? selectedFile : undefined,
+        apk: formData.updateType === 'apk' ? selectedFile! : undefined,
       };
 
       await appVersionsService.createVersion(createData);
