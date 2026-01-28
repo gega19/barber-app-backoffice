@@ -14,7 +14,7 @@ const userSchema = z.object({
   name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
   phone: z.string().optional(),
   location: z.string().optional(),
-  role: z.enum(['ADMIN', 'CLIENT', 'USER', 'BARBERSHOP']),
+  role: z.enum(['ADMIN', 'CLIENT', 'USER', 'BARBERSHOP', 'BARBER']),
   workplaceId: z.string().optional(),
   country: z.string().optional(),
   gender: z.string().optional(),
@@ -69,12 +69,10 @@ export default function UsersPage() {
 
       const newUsers = response.data;
 
-      // Identify Barbers based on role 'BARBERSHOP'
-      // Optimally this logic should come from backend (e.g. isBarber flag), 
-      // but for now we map BARBERSHOP role to "Barber" badge.
+      // Identify Barbers based on 'isBarber' flag from backend OR role 'BARBERSHOP'
       const barberMap: Record<string, boolean> = {};
       newUsers.forEach((u) => {
-        barberMap[u.id] = u.role === 'BARBERSHOP';
+        barberMap[u.id] = !!u.isBarber || u.role === 'BARBERSHOP';
       });
       setUserBarberMap(barberMap);
 
@@ -180,7 +178,7 @@ export default function UsersPage() {
           phone: data.phone || undefined,
           location: data.location || undefined,
           role: data.role,
-          workplaceId: data.role === 'BARBERSHOP' ? data.workplaceId : undefined,
+          workplaceId: (data.role === 'BARBERSHOP' || data.role === 'BARBER') ? data.workplaceId : undefined,
           country: data.country || undefined,
           gender: data.gender || undefined,
         };
@@ -198,7 +196,7 @@ export default function UsersPage() {
           phone: data.phone || undefined,
           location: data.location || undefined,
           role: data.role,
-          workplaceId: data.role === 'BARBERSHOP' ? data.workplaceId : undefined,
+          workplaceId: (data.role === 'BARBERSHOP' || data.role === 'BARBER') ? data.workplaceId : undefined,
           country: data.country || undefined,
           gender: data.gender || undefined,
         };
@@ -248,6 +246,10 @@ export default function UsersPage() {
         return 'bg-blue-100 text-blue-800';
       case 'USER':
         return 'bg-gray-100 text-gray-800';
+      case 'BARBERSHOP':
+        return 'bg-purple-100 text-purple-800';
+      case 'BARBER':
+        return 'bg-amber-100 text-amber-800';
       default:
         return 'bg-gray-100 text-gray-800';
     }
@@ -353,6 +355,8 @@ export default function UsersPage() {
                   <option value="ADMIN">Administrador</option>
                   <option value="CLIENT">Cliente</option>
                   <option value="USER">Usuario</option>
+                  <option value="BARBER">Barbero (Empleado)</option>
+                  <option value="BARBERSHOP">Barbero (Manager)</option>
                 </select>
               </div>
 
@@ -787,12 +791,13 @@ export default function UsersPage() {
                     >
                       <option value="USER">Usuario</option>
                       <option value="CLIENT">Cliente</option>
+                      <option value="BARBER">Barbero (Empleado)</option>
                       <option value="BARBERSHOP">Barbería (Manager)</option>
                       <option value="ADMIN">Administrador</option>
                     </select>
                   </div>
 
-                  {selectedRole === 'BARBERSHOP' && (
+                  {(selectedRole === 'BARBERSHOP' || selectedRole === 'BARBER') && (
                     <div className="col-span-full">
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Vincular a Barbería <span className="text-red-500">*</span>

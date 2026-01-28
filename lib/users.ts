@@ -1,6 +1,6 @@
 import api from './api';
 
-export type UserRole = 'ADMIN' | 'CLIENT' | 'USER' | 'BARBERSHOP';
+export type UserRole = 'ADMIN' | 'CLIENT' | 'USER' | 'BARBERSHOP' | 'BARBER';
 
 export interface User {
   id: string;
@@ -17,6 +17,7 @@ export interface User {
   emailVerified?: boolean | null;
   createdAt: string;
   updatedAt: string;
+  isBarber?: boolean;
 }
 
 export interface CreateUserData {
