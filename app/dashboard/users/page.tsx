@@ -60,60 +60,27 @@ export default function UsersPage() {
   const fetchUsers = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await usersService.getUsers(currentPage, 10, searchTerm);
-      let filteredUsers = response.data;
+      // Pass filters to backend
+      const response = await usersService.getUsers(currentPage, 10, searchTerm, {
+        role: roleFilter,
+        userType: userTypeFilter,
+        dateRange: dateFilter,
+      });
 
-      // Fetch associated barber profiles for these users
+      const newUsers = response.data;
+
+      // Identify Barbers based on role 'BARBERSHOP'
+      // Optimally this logic should come from backend (e.g. isBarber flag), 
+      // but for now we map BARBERSHOP role to "Barber" badge.
       const barberMap: Record<string, boolean> = {};
-
-      // Optimization: we could add an endpoint to check this in bulk, 
-      // but for now we'll do it as we fetch users if needed.
-      // Actually, the backend now returns if isBarber
-      response.data.forEach((u: any) => {
-        barberMap[u.id] = u.role === 'BARBER' || !!u.isBarber;
+      newUsers.forEach((u) => {
+        barberMap[u.id] = u.role === 'BARBERSHOP';
       });
       setUserBarberMap(barberMap);
 
-      // Apply role filter
-      if (roleFilter !== 'ALL') {
-        filteredUsers = filteredUsers.filter(user => user.role === roleFilter);
-      }
-
-      // Apply user type filter (barber vs normal)
-      if (userTypeFilter !== 'ALL') {
-        filteredUsers = filteredUsers.filter(user => {
-          const isBarber = barberMap[user.id] || false;
-          return userTypeFilter === 'BARBER' ? isBarber : !isBarber;
-        });
-      }
-
-      // Apply date filter
-      if (dateFilter !== 'ALL') {
-        const now = new Date();
-        const filterDate = new Date();
-
-        switch (dateFilter) {
-          case 'TODAY':
-            filterDate.setHours(0, 0, 0, 0);
-            break;
-          case 'WEEK':
-            filterDate.setDate(now.getDate() - 7);
-            break;
-          case 'MONTH':
-            filterDate.setMonth(now.getMonth() - 1);
-            break;
-        }
-
-        filteredUsers = filteredUsers.filter(user => {
-          const userDate = new Date(user.createdAt);
-          return userDate >= filterDate;
-        });
-      }
-
-      setUsers(filteredUsers);
-      // Recalculate total pages based on filtered results
-      const totalFiltered = filteredUsers.length;
-      setTotalPages(Math.ceil(totalFiltered / 10) || 1);
+      setUsers(newUsers);
+      // Use backend provided pagination data
+      setTotalPages(response.pagination.totalPages || 1);
     } catch (err: any) {
       setError(err.response?.data?.message || 'Error al cargar usuarios');
     } finally {

@@ -54,7 +54,16 @@ export interface UsersResponse {
 }
 
 export const usersService = {
-  async getUsers(page: number = 1, limit: number = 10, search?: string): Promise<UsersResponse> {
+  async getUsers(
+    page: number = 1,
+    limit: number = 10,
+    search?: string,
+    filters?: {
+      role?: string;
+      userType?: 'BARBER' | 'NORMAL' | 'ALL';
+      dateRange?: 'TODAY' | 'WEEK' | 'MONTH' | 'ALL';
+    }
+  ): Promise<UsersResponse> {
     const params = new URLSearchParams({
       page: page.toString(),
       limit: limit.toString(),
@@ -62,6 +71,43 @@ export const usersService = {
 
     if (search) {
       params.append('search', search);
+    }
+
+    if (filters) {
+      if (filters.role && filters.role !== 'ALL') {
+        params.append('role', filters.role);
+      }
+
+      if (filters.userType && filters.userType !== 'ALL') {
+        // Map userType filter to backend logic
+        if (filters.userType === 'BARBER') {
+          params.append('isBarber', 'true');
+        } else if (filters.userType === 'NORMAL') {
+          params.append('isBarber', 'false');
+        }
+      }
+
+      if (filters.dateRange && filters.dateRange !== 'ALL') {
+        const now = new Date();
+        const fromDate = new Date();
+
+        switch (filters.dateRange) {
+          case 'TODAY':
+            fromDate.setHours(0, 0, 0, 0);
+            break;
+          case 'WEEK':
+            fromDate.setDate(now.getDate() - 7);
+            break;
+          case 'MONTH':
+            fromDate.setMonth(now.getMonth() - 1);
+            break;
+        }
+
+        params.append('fromDate', fromDate.toISOString());
+        // For TODAY, we imply 'until now' or end of day? 
+        // Backend handles gte fromDate. If we want exact ranges we can send toDate too.
+        // For simplicity, we just send start date.
+      }
     }
 
     const response = await api.get<UsersResponse>(`/users?${params.toString()}`);
