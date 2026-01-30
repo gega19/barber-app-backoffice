@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { authService } from '@/lib/auth';
 import api from '@/lib/api';
-import { 
-  Users, 
-  Calendar, 
-  Scissors, 
+import {
+  Users,
+  Calendar,
+  Scissors,
   Star,
   TrendingUp,
   DollarSign
@@ -163,13 +163,19 @@ export default function DashboardPage() {
         <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Acciones Rápidas</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <button className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left">
-              <p className="font-medium text-gray-900">Ver Barberos</p>
-              <p className="text-sm text-gray-600 mt-1">Gestionar barberos</p>
+            <button
+              onClick={() => router.push('/dashboard/profile')}
+              className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+            >
+              <p className="font-medium text-gray-900">Mi Perfil</p>
+              <p className="text-sm text-gray-600 mt-1">Ver y compartir perfil</p>
             </button>
-            <button className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left">
+            <button
+              onClick={() => router.push('/dashboard/appointments')}
+              className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left"
+            >
               <p className="font-medium text-gray-900">Ver Citas</p>
-              <p className="text-sm text-gray-600 mt-1">Gestionar citas</p>
+              <p className="text-sm text-gray-600 mt-1">Gestionar citas y agenda</p>
             </button>
             <button className="p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-left">
               <p className="font-medium text-gray-900">Ver Usuarios</p>

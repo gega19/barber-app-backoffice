@@ -68,13 +68,45 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/projects/barber-application/barber-app-backoffice/lib/api.ts [app-client] (ecmascript)");
 ;
 const usersService = {
-    async getUsers (page = 1, limit = 10, search) {
+    async getUsers (page = 1, limit = 10, search, filters) {
         const params = new URLSearchParams({
             page: page.toString(),
             limit: limit.toString()
         });
         if (search) {
             params.append('search', search);
+        }
+        if (filters) {
+            if (filters.role && filters.role !== 'ALL') {
+                params.append('role', filters.role);
+            }
+            if (filters.userType && filters.userType !== 'ALL') {
+                // Map userType filter to backend logic
+                if (filters.userType === 'BARBER') {
+                    params.append('isBarber', 'true');
+                } else if (filters.userType === 'NORMAL') {
+                    params.append('isBarber', 'false');
+                }
+            }
+            if (filters.dateRange && filters.dateRange !== 'ALL') {
+                const now = new Date();
+                const fromDate = new Date();
+                switch(filters.dateRange){
+                    case 'TODAY':
+                        fromDate.setHours(0, 0, 0, 0);
+                        break;
+                    case 'WEEK':
+                        fromDate.setDate(now.getDate() - 7);
+                        break;
+                    case 'MONTH':
+                        fromDate.setMonth(now.getMonth() - 1);
+                        break;
+                }
+                params.append('fromDate', fromDate.toISOString());
+            // For TODAY, we imply 'until now' or end of day? 
+            // Backend handles gte fromDate. If we want exact ranges we can send toDate too.
+            // For simplicity, we just send start date.
+            }
         }
         const response = await __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$projects$2f$barber$2d$application$2f$barber$2d$app$2d$backoffice$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get(`/users?${params.toString()}`);
         return response.data;
