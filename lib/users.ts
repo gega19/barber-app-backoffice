@@ -15,6 +15,7 @@ export interface User {
   role: UserRole;
   workplaceId?: string | null;
   emailVerified?: boolean | null;
+  phoneVerifiedAt?: string | null;
   createdAt: string;
   updatedAt: string;
   isBarber?: boolean;

@@ -1,0 +1,76 @@
+{
+  "app": {
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/_not-found/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/analytics/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/app-versions/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/appointments/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/campaigns/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/competition/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/competition/periods/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/general/payment-methods/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/legal-documents/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/my-barbershop/barbers/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/my-barbershop/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/my-workplace/clients/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/my-workplace/stats/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/payment/verification/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/promotions/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/settings/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/specialties/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/users/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/debug/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/login/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

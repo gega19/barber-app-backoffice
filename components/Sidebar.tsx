@@ -20,7 +20,8 @@ import {
   Send,
   Smartphone,
   FileText,
-  BarChart3
+  BarChart3,
+  Trophy
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { authService } from '@/lib/auth';
@@ -46,6 +47,7 @@ const adminNavigation: NavItem[] = [
   { name: 'Citas', href: '/dashboard/appointments', icon: Calendar },
   { name: 'Promociones', href: '/dashboard/promotions', icon: Tag },
   { name: 'Especialidades', href: '/dashboard/specialties', icon: Award },
+  { name: 'Competencia', href: '/dashboard/competition', icon: Trophy },
   { name: 'Campañas', href: '/dashboard/campaigns', icon: Send },
   { name: 'Versiones APK', href: '/dashboard/app-versions', icon: Smartphone },
   { name: 'Documentos Legales', href: '/dashboard/legal-documents', icon: FileText },

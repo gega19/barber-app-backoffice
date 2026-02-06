@@ -1,0 +1,3 @@
+module.exports=[64433,a=>{a.v({className:"inter_5972bc34-module__OU16Qa__className"})},82371,a=>{"use strict";var b=a.i(56812),c=a.i(64433);let d={className:c.default.className,style:{fontFamily:"'Inter', 'Inter Fallback'",fontStyle:"normal"}};function e({children:a}){return(0,b.jsx)("html",{lang:"es",children:(0,b.jsx)("body",{className:d.className,children:a})})}null!=c.default.variable&&(d.variable=c.default.variable),a.s(["default",()=>e,"metadata",0,{title:"bartop - Panel de Administración",description:"Panel de administración para bartop",icons:{icon:"/logo.png",shortcut:"/logo.png",apple:"/logo.png"}}],82371)}];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__d4363c2b._.js.map

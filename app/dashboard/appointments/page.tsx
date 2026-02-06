@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Calendar, Plus, Search, Edit, Trash2, Eye, Filter, X, Copy, Check, ChevronDown, ChevronUp, Clock, User, Scissors, CreditCard } from 'lucide-react';
+import { Calendar, Plus, Search, Edit, Trash2, Eye, Filter, X, Copy, Check, ChevronDown, ChevronUp, Clock, User, Scissors, CreditCard, Tag } from 'lucide-react';
 import { appointmentsService, Appointment, CreateAppointmentData, UpdateAppointmentData, AppointmentStatus } from '@/lib/appointments';
 import { usersService } from '@/lib/users';
 import { useForm } from 'react-hook-form';
@@ -696,6 +696,37 @@ export default function AppointmentsPage() {
                     <div className="col-span-2">
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Notas</label>
                       <p className="text-sm text-gray-900 bg-gray-50 px-3 py-2 rounded-lg">{selectedAppointment.notes}</p>
+                    </div>
+                  )}
+                  {selectedAppointment.promotion && (
+                    <div className="col-span-2">
+                      <label className="block text-sm font-semibold text-gray-700 mb-1 flex items-center gap-2">
+                        <Tag className="w-4 h-4 text-purple-600" />
+                        Promoción Activa
+                      </label>
+                      <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-4">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <p className="text-sm font-semibold text-purple-900">{selectedAppointment.promotion.title}</p>
+                            <p className="text-xs text-purple-700 mt-1">{selectedAppointment.promotion.description}</p>
+                            <div className="flex items-center gap-2 mt-2 flex-wrap">
+                              <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs font-mono font-semibold">
+                                {selectedAppointment.promotion.code}
+                              </span>
+                              {selectedAppointment.promotion.discount && (
+                                <span className="px-2 py-1 bg-purple-200 text-purple-800 rounded text-xs font-semibold">
+                                  -{selectedAppointment.promotion.discount}%
+                                </span>
+                              )}
+                              {selectedAppointment.promotion.discountAmount && (
+                                <span className="px-2 py-1 bg-purple-200 text-purple-800 rounded text-xs font-semibold">
+                                  -${selectedAppointment.promotion.discountAmount.toFixed(2)}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>

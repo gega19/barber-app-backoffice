@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Users as UsersIcon, Plus, Search, Edit, Trash2, Eye, Filter, X, Copy, Check, ChevronDown, ChevronUp, MailCheck, MailX } from 'lucide-react';
+import { Users as UsersIcon, Plus, Search, Edit, Trash2, Eye, Filter, X, Copy, Check, ChevronDown, ChevronUp, MailCheck, MailX, ChevronLeft, ChevronRight, Scissors } from 'lucide-react';
 import { usersService, User, CreateUserData, UpdateUserData, UserRole } from '@/lib/users';
 import { workplacesService, Workplace } from '@/lib/workplaces';
 import { useForm, useWatch } from 'react-hook-form';
@@ -10,7 +10,7 @@ import { z } from 'zod';
 
 const userSchema = z.object({
   email: z.string().email('Email inválido'),
-  password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres').optional(),
+  password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres').or(z.literal('')).optional(),
   name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
   phone: z.string().optional(),
   location: z.string().optional(),
@@ -69,10 +69,19 @@ export default function UsersPage() {
 
       const newUsers = response.data;
 
-      // Identify Barbers based on 'isBarber' flag from backend OR role 'BARBERSHOP'
+      // Debug: Log all users to check isBarber field
+      console.log('All users with isBarber flag:', newUsers.map(u => ({
+        id: u.id,
+        name: u.name,
+        role: u.role,
+        isBarber: u.isBarber,
+        email: u.email,
+      })));
+
+      // Identify Barbers based on 'isBarber' flag from backend OR role 'BARBER'/'BARBERSHOP'
       const barberMap: Record<string, boolean> = {};
       newUsers.forEach((u) => {
-        barberMap[u.id] = !!u.isBarber || u.role === 'BARBERSHOP';
+        barberMap[u.id] = !!u.isBarber || u.role === 'BARBER' || u.role === 'BARBERSHOP';
       });
       setUserBarberMap(barberMap);
 
@@ -156,6 +165,7 @@ export default function UsersPage() {
     setValue('workplaceId', user.workplaceId || '');
     setValue('country', user.country || '');
     setValue('gender', user.gender || '');
+    setValue('password', ''); // Clear password field
     setIsModalOpen(true);
   };
 
@@ -178,7 +188,7 @@ export default function UsersPage() {
           phone: data.phone || undefined,
           location: data.location || undefined,
           role: data.role,
-          workplaceId: (data.role === 'BARBERSHOP' || data.role === 'BARBER') ? data.workplaceId : undefined,
+          workplaceId: data.workplaceId || undefined,
           country: data.country || undefined,
           gender: data.gender || undefined,
         };
@@ -196,7 +206,7 @@ export default function UsersPage() {
           phone: data.phone || undefined,
           location: data.location || undefined,
           role: data.role,
-          workplaceId: (data.role === 'BARBERSHOP' || data.role === 'BARBER') ? data.workplaceId : undefined,
+          workplaceId: data.workplaceId || undefined,
           country: data.country || undefined,
           gender: data.gender || undefined,
         };
@@ -480,13 +490,20 @@ export default function UsersPage() {
                             )}
                           </div>
                           <div className="ml-4">
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 flex-wrap">
                               <span className="text-sm font-semibold text-gray-900">{user.name}</span>
-                              {userBarberMap[user.id] && (
-                                <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-amber-100 text-amber-800">
-                                  Barbero
-                                </span>
-                              )}
+                              {(() => {
+                                const isBarber = user.isBarber === true || user.role === 'BARBER' || user.role === 'BARBERSHOP';
+                                if (isBarber) {
+                                  return (
+                                    <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-amber-400 to-amber-300 text-amber-900 border-2 border-amber-500 shadow-md">
+                                      <Scissors className="w-3.5 h-3.5" />
+                                      BARBERO
+                                    </span>
+                                  );
+                                }
+                                return null;
+                              })()}
                             </div>
                             {user.location && (
                               <div className="text-sm text-gray-500 flex items-center gap-1 mt-1">
@@ -500,7 +517,20 @@ export default function UsersPage() {
                         <div className="text-sm text-gray-900">{user.email}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">{user.phone || '-'}</div>
+                        <div className="flex flex-col">
+                          <span className="text-sm text-gray-900">{user.phone || '-'}</span>
+                          {user.phone && (
+                            <span className={`text-xs flex items-center gap-1 mt-0.5 ${user.phoneVerifiedAt ? 'text-green-600' : 'text-orange-500'}`}>
+                              {user.phoneVerifiedAt ? (
+                                <>
+                                  <Check className="w-3 h-3" /> Verified
+                                </>
+                              ) : (
+                                <span className="text-xs text-orange-500">No verificado</span>
+                              )}
+                            </span>
+                          )}
+                        </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span
@@ -574,24 +604,29 @@ export default function UsersPage() {
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 flex items-center justify-between">
+              <div className="px-6 py-4 border-t border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-sm font-medium text-gray-700">
-                  Página <span className="font-bold text-indigo-600">{currentPage}</span> de <span className="font-bold text-indigo-600">{totalPages}</span>
+                  Mostrando página <span className="font-bold text-indigo-600">{currentPage}</span> de <span className="font-bold text-indigo-600">{totalPages}</span>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2">
                   <button
                     onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 font-medium transition"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border-2 border-indigo-300 text-indigo-700 rounded-lg font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-indigo-50 hover:border-indigo-400 active:bg-indigo-100 transition-all shadow-sm hover:shadow-md disabled:shadow-none"
                   >
+                    <ChevronLeft className="w-4 h-4" />
                     Anterior
                   </button>
+                  <div className="px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold shadow-md">
+                    {currentPage}
+                  </div>
                   <button
                     onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 font-medium transition"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border-2 border-indigo-300 text-indigo-700 rounded-lg font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:bg-indigo-50 hover:border-indigo-400 active:bg-indigo-100 transition-all shadow-sm hover:shadow-md disabled:shadow-none"
                   >
                     Siguiente
+                    <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -797,27 +832,22 @@ export default function UsersPage() {
                     </select>
                   </div>
 
-                  {(selectedRole === 'BARBERSHOP' || selectedRole === 'BARBER') && (
-                    <div className="col-span-full">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Vincular a Barbería <span className="text-red-500">*</span>
-                      </label>
-                      <select
-                        {...register('workplaceId')}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
-                      >
-                        <option value="">Seleccionar barbería...</option>
-                        {workplaces.map((wp) => (
-                          <option key={wp.id} value={wp.id}>
-                            {wp.name} - {wp.city}
-                          </option>
-                        ))}
-                      </select>
-                      {errors.workplaceId && (
-                        <p className="mt-1 text-sm text-red-600">Debe seleccionar una barbería</p>
-                      )}
-                    </div>
-                  )}
+                  <div className="col-span-full">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Vincular a Barbería {(selectedRole === 'BARBERSHOP' || selectedRole === 'BARBER') && <span className="text-red-500">*</span>}
+                    </label>
+                    <select
+                      {...register('workplaceId')}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none"
+                    >
+                      <option value="">Sin vinculación (Opcional)</option>
+                      {workplaces.map((wp) => (
+                        <option key={wp.id} value={wp.id}>
+                          {wp.name} - {wp.city}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Ubicación</label>

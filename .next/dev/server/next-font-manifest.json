@@ -1,21 +1,9 @@
 {
   "app": {
-    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/appointments/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/barbershops/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/page": [
+    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/app-versions/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
     "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/dashboard/users/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/login/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
-    ],
-    "[project]/Desktop/projects/barber-application/barber-app-backoffice/app/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ]
   },

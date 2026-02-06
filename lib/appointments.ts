@@ -29,6 +29,15 @@ export interface Service {
   description?: string | null;
 }
 
+export interface Promotion {
+  id: string;
+  title: string;
+  code: string;
+  discount?: number | null;
+  discountAmount?: number | null;
+  description: string;
+}
+
 export interface Appointment {
   id: string;
   userId: string;
@@ -45,6 +54,7 @@ export interface Appointment {
   paymentStatus?: string | null;
   paymentProof?: string | null;
   notes?: string | null;
+  promotion?: Promotion | null;
   createdAt: string;
   updatedAt: string;
 }

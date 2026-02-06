@@ -1,8 +1,4 @@
 {
-  "/dashboard/appointments/page": "app/dashboard/appointments/page.js",
-  "/dashboard/barbershops/page": "app/dashboard/barbershops/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/dashboard/users/page": "app/dashboard/users/page.js",
-  "/login/page": "app/login/page.js",
-  "/page": "app/page.js"
+  "/dashboard/app-versions/page": "app/dashboard/app-versions/page.js",
+  "/dashboard/users/page": "app/dashboard/users/page.js"
 }
